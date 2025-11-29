@@ -152,7 +152,6 @@ func _physics_process(delta: float) -> void:
 	#Potrzebna funkcja by gracz mógł przetwarzać ruch
 	updateModules(delta)
 	move_and_slide()
-	throw()
 
 
 #Funkcja kiwania głową
