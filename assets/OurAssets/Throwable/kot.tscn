@@ -6,7 +6,7 @@
 radius = 0.119140625
 height = 0.7104492
 
-[node name="RigidBody3D" type="RigidBody3D"]
+[node name="Kot" type="RigidBody3D"]
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("1_4sk5u")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)

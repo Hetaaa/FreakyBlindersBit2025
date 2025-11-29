@@ -1,0 +1,39 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://jf18yvcc8bfv"
+path.s3tc="res://.godot/imported/korytarz_0.png-09e0f1c2a55b6c654e429a0a46c327b0.s3tc.ctex"
+path.etc2="res://.godot/imported/korytarz_0.png-09e0f1c2a55b6c654e429a0a46c327b0.etc2.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "75acbc8e936a017324d42050dac39ff7"
+}
+
+[deps]
+
+source_file="res://assets/OurAssets/Maps/Bytom/model/korytarz_0.png"
+dest_files=["res://.godot/imported/korytarz_0.png-09e0f1c2a55b6c654e429a0a46c327b0.s3tc.ctex", "res://.godot/imported/korytarz_0.png-09e0f1c2a55b6c654e429a0a46c327b0.etc2.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
