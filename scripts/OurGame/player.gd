@@ -69,7 +69,7 @@ var base_fov = 90.0
 #Sprawdzacz czy nad graczem coś jest (by odkucnąć)
 @onready var standUpCheck = $Head/StandUpCheck
 #Promień do wykrywania na co patrzy gracz (przedmioty)
-@onready var vis_ray = $Head/Eyes/Camera3D/VisRay
+@onready var vis_ray : RayCast3D= $Head/Eyes/Camera3D/VisRay
 
 #Krztałty kolizji gracza stojąca i kucania
 @onready var standing_collision_shape = $StandShape
@@ -96,10 +96,20 @@ var mouse_block : bool = false
 var camera_update_block : bool = false
 var movement_block : bool = false
 
+var health : int = 100
 
+@onready var throw_point = $Head/Eyes/Camera3D/ThrowPoint
+@onready var modules = $Modules
+var current_module : Module 
+
+@onready var throwing_module = $Modules/Throwing
+@onready var pickup_module = $Modules/PickUp
+
+var pocket_item 
 
 func _ready() -> void:
 	Global.player = self
+	changeModule(modules.initial_module)
 	#Ustawiamy by myszką była zablokowana i można by było się obracać w 3D
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	camera.current = true
@@ -135,10 +145,12 @@ func _physics_process(delta: float) -> void:
 	#Aktualizacja movementu
 	
 	movement(delta)
+
 	if Input.is_action_just_pressed("freeze_time"):
 		Global.toggle_freeze()
 	_push_away_rigid_bodies()
 	#Potrzebna funkcja by gracz mógł przetwarzać ruch
+	updateModules(delta)
 	move_and_slide()
 	throw()
 
@@ -303,21 +315,22 @@ func _push_away_rigid_bodies():
 func sensitivity_change(value) -> void:
 	SENSITIVITY=value
 
-func throw():
-	if Input.is_action_just_released("throw"):
-		# Tworzenie nowej petardy
-		var Throwable_spawn = Throwable.instantiate()
-		Throwable_spawn.position = $Head/Eyes/Throwpossiton.global_position
-		get_tree().current_scene.add_child(Throwable_spawn)
-		# Impuls rzutu
-		var throw_force = -8.0
-		var up_direction = 3.5
-		
-		var player_rotation = camera.global_transform.basis.z.normalized()
-		Throwable_spawn.apply_central_impulse(player_rotation * throw_force + Vector3(0, up_direction, 0))
-		# Losowy obrót
-		Throwable_spawn.angular_velocity = Vector3(
-			randf_range(-8.0, 8.0),
-			randf_range(-8.0, 8.0),
-			randf_range(-8.0, 8.0)
-		)
+func add_module(module : Module):
+	modules.add_child(module)
+
+func updateModules(delta):
+	if current_module:
+		current_module.PhysicsUpdate(delta)
+
+func changeModule(module : Module):
+	if current_module:
+		current_module.Exit()
+	current_module = module
+	current_module.Enter()
+
+func pickup(item):
+	pocket_item = item
+	changeModule(throwing_module)
+
+func get_hit(amount):
+	health -= amount
