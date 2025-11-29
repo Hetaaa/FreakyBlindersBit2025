@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://bnk5dyqqtwmcs"]
+
+[ext_resource type="Script" uid="uid://c2inmctofvfdt" path="res://scripts/OurGame/slowable_rigidbody/slowable_rigidbody.gd" id="1_mf502"]
+[ext_resource type="PackedScene" uid="uid://ccywx28fbfp6l" path="res://assets/OurAssets/Propy/psx_fire_extinguisher.glb" id="2_hjvlh"]
+[ext_resource type="PackedScene" uid="uid://dadhbfhvcqj16" path="res://assets/OurAssets/Glow/highlitable.tscn" id="3_evrpt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hjvlh"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_derex"]
+height = 1.3268433
+radius = 0.2421875
+
+[node name="gasnica" type="RigidBody3D"]
+collision_layer = 130
+collision_mask = 130
+mass = 60.0
+freeze_mode = 1
+script = ExtResource("1_mf502")
+
+[node name="PickUpArea" type="Area3D" parent="."]
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickUpArea"]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0.7353146, 0)
+shape = SubResource("BoxShape3D_hjvlh")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_hjvlh")]
+
+[node name="Highlitable" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/_6/root_5/tank_0/Object_6" index="0" instance=ExtResource("3_evrpt")]
+
+[node name="Highlitable" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/_6/root_5/valve assembly_1/Object_8" index="0" instance=ExtResource("3_evrpt")]
+
+[node name="Highlitable" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/_6/root_5/handle_2/Object_10" index="0" instance=ExtResource("3_evrpt")]
+
+[node name="Highlitable" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/_6/root_5/release lever_3/Object_12" index="0" instance=ExtResource("3_evrpt")]
+
+[node name="Highlitable" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/_6/root_5/hose_4/Object_14" index="0" instance=ExtResource("3_evrpt")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.67349243, 0)
+shape = SubResource("CylinderShape3D_derex")
+
+[editable path="Sketchfab_Scene"]

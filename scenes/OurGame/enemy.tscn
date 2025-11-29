@@ -113,12 +113,14 @@ size = Vector3(1, 0.70654297, 0.6884155)
 size = Vector3(0.6904297, 1.8234406, 0.8027344)
 
 [node name="Enemy" type="CharacterBody3D"]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_pd5ih")
 
 [node name="Enemy_model" parent="." instance=ExtResource("2_fpbsl")]
 
 [node name="rig_001" parent="Enemy_model" index="0"]
-transform = Transform3D(0.8881575, 0.047891006, -0.45703694, 0.051750395, 0.9778045, 0.2030264, 0.45661607, -0.2039712, 0.86596626, -0.069580056, -0.014031143, 0.24877185)
+transform = Transform3D(0.8881575, 0.047891002, -0.45703694, 0.051750395, 0.9778044, 0.2030264, 0.45661607, -0.20397119, 0.86596626, -0.069580056, -0.014031143, 0.24877185)
 
 [node name="Skeleton3D" parent="Enemy_model/rig_001" index="0"]
 bones/1/rotation = Quaternion(0.03820523, 0.024656558, -0.018743023, 0.9987898)

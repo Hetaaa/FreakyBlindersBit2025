@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cybk1wmt5x6mp"]
+
+[ext_resource type="Script" uid="uid://c2inmctofvfdt" path="res://scripts/OurGame/slowable_rigidbody/slowable_rigidbody.gd" id="1_wgdj7"]
+[ext_resource type="PackedScene" uid="uid://dmohfhfoky8gh" path="res://assets/OurAssets/Propy/psx_trash_can.glb" id="2_2gpvn"]
+[ext_resource type="PackedScene" uid="uid://dadhbfhvcqj16" path="res://assets/OurAssets/Glow/highlitable.tscn" id="3_r1mdp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_43v5e"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1bpo5"]
+height = 2.097412
+radius = 0.6166992
+
+[node name="kosz" type="RigidBody3D"]
+collision_layer = 130
+collision_mask = 130
+mass = 60.0
+freeze_mode = 1
+script = ExtResource("1_wgdj7")
+
+[node name="PickUpArea" type="Area3D" parent="."]
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickUpArea"]
+transform = Transform3D(1.3, 0, 0, 0, 2.5, 0, 0, 0, 1.3, 0, 0.78561336, 0)
+shape = SubResource("BoxShape3D_43v5e")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_2gpvn")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.068657994, 0, -0.048536777)
+
+[node name="Highlitable" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/_2/root_1/trash can_0/Object_6" index="0" instance=ExtResource("3_r1mdp")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.051279485, 0.7308357, -0.022049189)
+shape = SubResource("CylinderShape3D_1bpo5")
+
+[editable path="Sketchfab_Scene"]
