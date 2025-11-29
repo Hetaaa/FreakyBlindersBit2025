@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhfa33b4drega"]
+
+[ext_resource type="PackedScene" uid="uid://1dw3ta7f7y4x" path="res://assets/OurAssets/Propy/lom/crowbar_v1.glb" id="1_mhbml"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_mhbml")]
