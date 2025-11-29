@@ -1,7 +1,13 @@
-[gd_scene load_steps=21 format=3 uid="uid://7dtfclleauxr"]
+[gd_scene load_steps=27 format=3 uid="uid://7dtfclleauxr"]
 
 [ext_resource type="PackedScene" uid="uid://cuutkf84avg0c" path="res://assets/OurAssets/Maps/Bytom/korytarz.glb" id="1_vxy7e"]
 [ext_resource type="PackedScene" uid="uid://rp5hfwm874u3" path="res://scenes/OurGame/Player.tscn" id="2_exyli"]
+[ext_resource type="PackedScene" uid="uid://bbg3lqyu6ncg" path="res://assets/OurAssets/Throwable/kosz.tscn" id="3_exyli"]
+[ext_resource type="PackedScene" uid="uid://d3uslpx8f7ml4" path="res://assets/OurAssets/Throwable/fryty.tscn" id="4_2q34d"]
+[ext_resource type="PackedScene" uid="uid://b4670ra0rmaio" path="res://assets/OurAssets/Throwable/gasnica.tscn" id="5_pnpeq"]
+[ext_resource type="PackedScene" uid="uid://ltq5ymp2x7v4" path="res://assets/OurAssets/Throwable/burger.tscn" id="6_57bt1"]
+[ext_resource type="PackedScene" uid="uid://cqg0hnskry4uv" path="res://assets/OurAssets/Throwable/kot.tscn" id="7_o6jew"]
+[ext_resource type="PackedScene" uid="uid://bkfa3toro0odo" path="res://assets/OurAssets/Throwable/cigaretbox.tscn" id="8_tpnni"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vxy7e"]
 size = Vector3(4.0398254, 5.6989746, 2.1013184)
@@ -243,3 +249,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0029893, 2.8176386, 7.93077
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_exyli")
+
+[node name="RigidBody3D" parent="." instance=ExtResource("3_exyli")]
+transform = Transform3D(-0.99844074, 0, -0.05582139, 0, 1, 0, 0.05582139, 0, -0.99844074, 3.6078618, 2.5526357, 16.17466)
+
+[node name="Fryty" parent="." instance=ExtResource("4_2q34d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6293919, 2.5526357, 9.533165)
+
+[node name="gasnica" parent="." instance=ExtResource("5_pnpeq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6307132, 2.5526357, 8.186001)
+
+[node name="burger" parent="." instance=ExtResource("6_57bt1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5321368, 2.5562348, 9.996487)
+
+[node name="RigidBody3D2" parent="." instance=ExtResource("3_exyli")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8730942, 2.5526357, 10.954877)
+
+[node name="RigidBody3D3" parent="." instance=ExtResource("7_o6jew")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3424203, 2.5526357, 7.780365)
+
+[node name="cigaretbox" parent="." instance=ExtResource("8_tpnni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8609273, 2.5782504, 10.378107)

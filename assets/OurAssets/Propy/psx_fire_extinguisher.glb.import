@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://gycsnp37i518"
-path="res://.godot/imported/enemies_run.glb-dca21b7afa10c90f032c0f09980fef78.scn"
+uid="uid://ccywx28fbfp6l"
+path="res://.godot/imported/psx_fire_extinguisher.glb-9178bf9837f517344310b8646a179bbd.scn"
 
 [deps]
 
-source_file="res://assets/enemies/enemies_run.glb"
-dest_files=["res://.godot/imported/enemies_run.glb-dca21b7afa10c90f032c0f09980fef78.scn"]
+source_file="res://assets/OurAssets/Propy/psx_fire_extinguisher.glb"
+dest_files=["res://.godot/imported/psx_fire_extinguisher.glb-9178bf9837f517344310b8646a179bbd.scn"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b6sxw6dkaupme"
-path="res://.godot/imported/enemies_dead.glb-45a2fcce35748040f1fc9c9d8555e9c1.scn"
+uid="uid://05w0gk5w0qcy"
+path="res://.godot/imported/lowpoly_burger.glb-d44c7e7e477410869273547a298d8571.scn"
 
 [deps]
 
-source_file="res://assets/enemies/enemies_dead.glb"
-dest_files=["res://.godot/imported/enemies_dead.glb-45a2fcce35748040f1fc9c9d8555e9c1.scn"]
+source_file="res://assets/OurAssets/Propy/lowpoly_burger.glb"
+dest_files=["res://.godot/imported/lowpoly_burger.glb-d44c7e7e477410869273547a298d8571.scn"]
 
 [params]
 

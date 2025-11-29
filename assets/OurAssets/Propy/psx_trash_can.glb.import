@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d086807rsemwd"
-path="res://.godot/imported/enemies_shutgun_shoot.glb-0e0e1ddb4b96ed9b759166e787da82d5.scn"
+uid="uid://dmohfhfoky8gh"
+path="res://.godot/imported/psx_trash_can.glb-d51f444f920d8a3b27c6bdfad7f53f41.scn"
 
 [deps]
 
-source_file="res://assets/enemies/enemies_shutgun_shoot.glb"
-dest_files=["res://.godot/imported/enemies_shutgun_shoot.glb-0e0e1ddb4b96ed9b759166e787da82d5.scn"]
+source_file="res://assets/OurAssets/Propy/psx_trash_can.glb"
+dest_files=["res://.godot/imported/psx_trash_can.glb-d51f444f920d8a3b27c6bdfad7f53f41.scn"]
 
 [params]
 
