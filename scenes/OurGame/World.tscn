@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://d2ktr1csnv0wm"]
+[gd_scene load_steps=15 format=3 uid="uid://d2ktr1csnv0wm"]
 
 [ext_resource type="Texture2D" uid="uid://0ishtn1wlx5w" path="res://assets/OurAssets/Textures/dev/Green/texture_01.png" id="1_f4s6c"]
 [ext_resource type="PackedScene" uid="uid://rp5hfwm874u3" path="res://scenes/OurGame/Player.tscn" id="1_oyjwk"]
 [ext_resource type="PackedScene" uid="uid://dio2f7phyf0uo" path="res://scenes/OurGame/static_models/glass_bottle.tscn" id="4_vxkh1"]
 [ext_resource type="PackedScene" uid="uid://b02jbk56pyr4b" path="res://scenes/OurGame/enemy.tscn" id="5_f6xgv"]
-[ext_resource type="PackedScene" uid="uid://8gh3gj325isi" path="res://scenes/burger_throwable.tscn" id="5_pev72"]
-[ext_resource type="PackedScene" uid="uid://bnk5dyqqtwmcs" path="res://scenes/gasnica_throwable.tscn" id="6_pev72"]
+[ext_resource type="PackedScene" uid="uid://05w0gk5w0qcy" path="res://assets/OurAssets/Propy/lowpoly_burger.glb" id="5_pev72"]
+[ext_resource type="PackedScene" uid="uid://dadhbfhvcqj16" path="res://assets/OurAssets/Glow/highlitable.tscn" id="6_dl5lw"]
+[ext_resource type="Texture2D" uid="uid://bwkvl24ue6kbw" path="res://assets/OurAssets/Textures/wylezek.png" id="7_slqf3"]
+[ext_resource type="Texture2D" uid="uid://dh6xvqisxn6v8" path="res://assets/OurAssets/Textures/ksiadz.png" id="8_dl5lw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oyjwk"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -63,9 +65,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1083984, 1.3797302, -1.3896
 use_collision = true
 size = Vector3(5.216797, 4.5249634, 3.7792969)
 
-[node name="Enemy" parent="." instance=ExtResource("5_f6xgv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.383422, -0.17114258, -2.5775928)
-
 [node name="Glass_Bottle" parent="." instance=ExtResource("4_vxkh1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28726572, 0.16045663, 3.879026)
 
@@ -77,5 +76,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34990147, -0.16754362, 5.15
 
 [node name="gasnica" parent="." instance=ExtResource("6_pev72")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.162885, -0.17114252, 4.3128095)
+
+[node name="Decal" type="Decal" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 3.7506943, 1.58673, 0.49368608)
+size = Vector3(0.91918945, 0.06665039, 1.225708)
+texture_albedo = ExtResource("7_slqf3")
+
+[node name="Decal2" type="Decal" parent="."]
+transform = Transform3D(0.815, 0, 0, 0, -3.5624783e-08, -0.815, 0, 0.815, -3.5624783e-08, 2.3677995, 1.58673, 0.4969982)
+size = Vector3(0.91918945, 0.07006836, 1.225708)
+texture_albedo = ExtResource("8_dl5lw")
+
+[node name="Enemy" parent="." instance=ExtResource("5_f6xgv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.611997, -0.014027268, 2.1299121)
 
 [editable path="Player"]
