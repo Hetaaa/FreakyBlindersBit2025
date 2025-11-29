@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bcn4qi4jd7i1p"]
+[gd_scene load_steps=6 format=3 uid="uid://bcn4qi4jd7i1p"]
 
 [ext_resource type="Script" uid="uid://c2inmctofvfdt" path="res://scripts/OurGame/slowable_rigidbody/slowable_rigidbody.gd" id="1_63ms7"]
+[ext_resource type="PackedScene" uid="uid://dadhbfhvcqj16" path="res://assets/OurAssets/Glow/highlitable.tscn" id="2_s7pbh"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f4s6c"]
 bounce = 1.0
@@ -18,6 +19,8 @@ script = ExtResource("1_63ms7")
 
 [node name="Kloc_mesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_f4s6c")
+
+[node name="Highlitable" parent="Kloc_mesh" instance=ExtResource("2_s7pbh")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_f4s6c")
