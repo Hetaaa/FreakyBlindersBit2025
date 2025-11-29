@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbg3lqyu6ncg"]
+
+[ext_resource type="PackedScene" uid="uid://dmohfhfoky8gh" path="res://assets/OurAssets/Propy/psx_trash_can.glb" id="1_vfd1b"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_g8emw"]
+height = 2.097412
+radius = 0.6166992
+
+[node name="RigidBody3D" type="RigidBody3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_vfd1b")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.068657994, 0, -0.048536777)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.051279485, 0.7308357, -0.022049189)
+shape = SubResource("CylinderShape3D_g8emw")
