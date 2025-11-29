@@ -136,8 +136,7 @@ func _physics_process(delta: float) -> void:
 	
 	movement(delta)
 	if Input.is_action_just_pressed("freeze_time"):
-		Global.time_freeze = !Global.time_freeze
-		Global.just_unfreezed = true
+		Global.toggle_freeze()
 	_push_away_rigid_bodies()
 	#Potrzebna funkcja by gracz mógł przetwarzać ruch
 	move_and_slide()
