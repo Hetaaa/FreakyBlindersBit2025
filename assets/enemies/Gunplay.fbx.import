@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b20yt5kgsjuim"
-path="res://.godot/imported/enemies_pistol_shoot.glb-ebdac56043a347c4c8199a95f3a9caa0.scn"
+uid="uid://b35445fm5oa6b"
+path="res://.godot/imported/Gunplay.fbx-dc06e789bd9008c368187f4af41a89a8.scn"
 
 [deps]
 
-source_file="res://assets/enemies/enemies_pistol_shoot.glb"
-dest_files=["res://.godot/imported/enemies_pistol_shoot.glb-ebdac56043a347c4c8199a95f3a9caa0.scn"]
+source_file="res://assets/enemies/Gunplay.fbx"
+dest_files=["res://.godot/imported/Gunplay.fbx-dc06e789bd9008c368187f4af41a89a8.scn"]
 
 [params]
 
@@ -30,7 +30,7 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=false
+animation/trimming=true
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
@@ -38,5 +38,7 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={}
-gltf/naming_version=2
-gltf/embedded_image_handling=1
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=2

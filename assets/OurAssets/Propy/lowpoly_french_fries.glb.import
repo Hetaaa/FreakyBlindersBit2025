@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dgwf2r35bdn3m"
-path="res://.godot/imported/enemies_dead.glb-45a2fcce35748040f1fc9c9d8555e9c1.scn"
+uid="uid://dcrpgvavoet2u"
+path="res://.godot/imported/lowpoly_french_fries.glb-177169cc499798c9f2ecd68a8e7891ef.scn"
 
 [deps]
 
-source_file="res://assets/enemies/enemies_dead.glb"
-dest_files=["res://.godot/imported/enemies_dead.glb-45a2fcce35748040f1fc9c9d8555e9c1.scn"]
+source_file="res://assets/OurAssets/Propy/lowpoly_french_fries.glb"
+dest_files=["res://.godot/imported/lowpoly_french_fries.glb-177169cc499798c9f2ecd68a8e7891ef.scn"]
 
 [params]
 

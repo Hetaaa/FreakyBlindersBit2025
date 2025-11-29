@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c11engjoovq4n"
-path="res://.godot/imported/enemies_run.glb-dca21b7afa10c90f032c0f09980fef78.scn"
+uid="uid://dmohfhfoky8gh"
+path="res://.godot/imported/psx_trash_can.glb-d51f444f920d8a3b27c6bdfad7f53f41.scn"
 
 [deps]
 
-source_file="res://assets/enemies/enemies_run.glb"
-dest_files=["res://.godot/imported/enemies_run.glb-dca21b7afa10c90f032c0f09980fef78.scn"]
+source_file="res://assets/OurAssets/Propy/psx_trash_can.glb"
+dest_files=["res://.godot/imported/psx_trash_can.glb-d51f444f920d8a3b27c6bdfad7f53f41.scn"]
 
 [params]
 
