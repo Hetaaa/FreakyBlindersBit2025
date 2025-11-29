@@ -7,6 +7,7 @@ var shoot_timer : int = 30
 func Enter():
 	npc = get_parent().npc
 	shoot_timer = 30
+	npc.change_animation("pistol")
 func PhysicsUpdate(delta: float) -> void:
 	if npc.dead and !Global.time_freeze:
 		Transitioned.emit(self, "Dead")
@@ -28,6 +29,7 @@ func PhysicsUpdate(delta: float) -> void:
 
 func shoot():
 	if !Global.time_freeze:
+		
 		var instance = barrel_scene.instantiate()
 		# ustaw transform lufy zanim dodasz (ładniej, ale nie obowiązkowe jeśli przekazujesz direction)
 		instance.global_transform = npc.gun_barrel.global_transform
@@ -38,3 +40,4 @@ func shoot():
 		instance.slowing_val = 0.3
 		instance.freeze_timer = 20
 		instance.launch(dir, instance.speed)
+		npc.change_animation("pistol")
