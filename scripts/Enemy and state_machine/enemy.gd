@@ -13,22 +13,27 @@ var freeze_factor := 1.0          # 1.0 = normalna prędkość, 0.0 = zamrożony
 var freeze_speed := 5.0           # jak szybko zwalnia (im większe tym szybciej)
 var is_frozen := false
 
+@export var attack_type = 0 #0 - shoot/ 1- melee
+@onready var player_seek_ray : RayCast3D = $PlayerSeek
+@onready var gun_barrel : Node3D = $GunBarrel
+
+var dead : bool = false
+
 func _physics_process(delta: float) -> void:
 	if Global.time_freeze == true:
 		is_frozen = true
 	else:
 		is_frozen = false
 	
-func walk(delta):
 	if is_frozen:
 		freeze_factor = lerp(freeze_factor, 0.0, delta * freeze_speed)
 	else:
 		freeze_factor = lerp(freeze_factor, 1.0, delta * freeze_speed)
 
+func walk(delta):
 	if freeze_factor <= 0.01:
 		return
 
-	
 	var next_pos = nav_agent.get_next_path_position()
 	var direction = global_position.direction_to(next_pos)
 	var new_vel = direction * SPEED
@@ -57,3 +62,22 @@ func hit():
 		if area != hit_box:
 			if area.has_method("get_hit"):
 				area.get_hit(10)
+func see_player():
+	player_seek_ray.look_at(Global.player.global_position+ Vector3(0,1.5,0))
+	if player_seek_ray.is_colliding():
+		var col = player_seek_ray.get_collider()
+		if col.is_in_group("player"):
+			return true
+	return false
+
+
+func _on_hitbox_body_entered(body: Node3D) -> void:
+	
+	if body is RigidBody3D:
+		if body.saved_dir:
+			if body.linear_velocity.length() > 3.0:
+				dead = true
+		else:
+			if body.linear_velocity.length() > 10.0:
+				dead = true
+		

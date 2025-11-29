@@ -1,22 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bcn4qi4jd7i1p"]
+[gd_scene load_steps=2 format=3 uid="uid://bcn4qi4jd7i1p"]
 
 [ext_resource type="Script" uid="uid://c2inmctofvfdt" path="res://scripts/OurGame/slowable_rigidbody/slowable_rigidbody.gd" id="1_63ms7"]
+[ext_resource type="PackedScene" uid="uid://dadhbfhvcqj16" path="res://assets/OurAssets/Glow/highlitable.tscn" id="2_s7pbh"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f4s6c"]
-bounce = 1.0
-
-[sub_resource type="BoxMesh" id="BoxMesh_f4s6c"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_f4s6c"]
-
-[node name="Kloc" type="RigidBody3D"]
+[node name="SoftRigidbody" type="RigidBody3D"]
+collision_layer = 129
+collision_mask = 129
 mass = 60.0
-physics_material_override = SubResource("PhysicsMaterial_f4s6c")
 freeze_mode = 1
 script = ExtResource("1_63ms7")
 
-[node name="Kloc_mesh" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_f4s6c")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_f4s6c")
+[node name="PickUpArea" type="Area3D" parent="."]
+collision_layer = 64
+collision_mask = 64
