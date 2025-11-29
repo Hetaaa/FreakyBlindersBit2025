@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6btvtdvj3l45"]
+
+[ext_resource type="PackedScene" uid="uid://d3wq5mrp6y64r" path="res://assets/OurAssets/Propy/microwave/PSX_OldMicrowave.glb" id="1_n5g34"]
+
+[node name="microwave" type="Node3D"]
+
+[node name="PSX_OldMicrowave" parent="." instance=ExtResource("1_n5g34")]
