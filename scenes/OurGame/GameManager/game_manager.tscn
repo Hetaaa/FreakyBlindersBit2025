@@ -7,3 +7,4 @@
 [node name="CurrentScene" type="Node" parent="."]
 
 [node name="World" parent="CurrentScene" instance=ExtResource("1_vlfkm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0005823374, 0.0028084517, -0.0013738275)
