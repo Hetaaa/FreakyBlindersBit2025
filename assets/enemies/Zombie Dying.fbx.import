@@ -3,13 +3,12 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ldhec5g1coob"
-path="res://.godot/imported/Zombie Dying.fbx-82a8fcf63b28f0766cc833396841fc57.scn"
+uid="uid://dklkx2msnt3kf"
+valid=false
 
 [deps]
 
 source_file="res://assets/enemies/Zombie Dying.fbx"
-dest_files=["res://.godot/imported/Zombie Dying.fbx-82a8fcf63b28f0766cc833396841fc57.scn"]
 
 [params]
 
@@ -38,7 +37,7 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={}
-fbx/importer=0
+fbx/importer=1
 fbx/allow_geometry_helper_nodes=false
 fbx/embedded_image_handling=1
 fbx/naming_version=1
