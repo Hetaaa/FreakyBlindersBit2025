@@ -14,3 +14,4 @@ func toggle_freeze():
 	just_unfreezed = true
 	highlight_changed.emit(time_freeze)
 	
+#new
