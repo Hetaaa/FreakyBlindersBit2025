@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3bi6nvtgjegt"]
+
+[ext_resource type="PackedScene" uid="uid://grdf8iu58yqo" path="res://Zombie Dying.fbx" id="1_unsjk"]
+
+[node name="Zombie Dying" instance=ExtResource("1_unsjk")]
+
+[node name="rig_001" parent="." index="5"]
+transform = Transform3D(85.0077, -43.7156, 29.3706, 49.5496, 85.2847, -16.4731, -17.8473, 28.5564, 94.1594, -0.482892, 0.263214, 0.326113)
+
+[node name="Skeleton3D" parent="rig_001" index="0"]
+bones/1/rotation = Quaternion(-0.100799, -0.0436327, -0.0688272, 0.991564)
+bones/2/rotation = Quaternion(-0.0732384, -0.0580361, -0.14981, 0.984289)
+bones/3/rotation = Quaternion(0.254642, 0.018896, 0.023132, 0.966574)
+bones/4/rotation = Quaternion(-0.181636, 0.0216297, 0.0205991, 0.982912)
+bones/5/rotation = Quaternion(-0.0249814, 0.0181253, 0.0237408, 0.999242)
+bones/7/rotation = Quaternion(-0.431781, -0.554348, -0.477, 0.527953)
+bones/8/rotation = Quaternion(-0.394554, 0.263094, -0.413141, 0.777447)
+bones/9/rotation = Quaternion(0.808815, 0.0195615, 0.292372, 0.509857)
+bones/10/rotation = Quaternion(0.124993, -0.13336, 0.204986, 0.961547)
+bones/11/rotation = Quaternion(0.0923882, 0.910152, 0.307026, -0.262343)
+bones/12/rotation = Quaternion(0.38798, -0.0909437, 0.199591, 0.89519)
+bones/13/rotation = Quaternion(0.0547115, 0.260242, 0.181851, 0.946684)
+bones/15/rotation = Quaternion(0.109138, 0.984936, -0.105364, -0.0829915)
+bones/16/rotation = Quaternion(0.050121, -0.0155237, 0.313102, 0.948269)
+bones/18/rotation = Quaternion(-0.57171, 0.329118, 0.457527, 0.596237)
+bones/19/rotation = Quaternion(-0.0761226, -0.799996, 0.316826, 0.503818)
+bones/20/rotation = Quaternion(0.133952, 0.0751399, 0.490005, 0.858083)
+bones/21/rotation = Quaternion(0.101612, 0.209318, 0.188117, 0.954187)
+bones/22/rotation = Quaternion(-0.0995001, 0.946362, 0.240892, 0.190973)
+bones/23/rotation = Quaternion(0.254915, 0.0323829, -0.10402, 0.960807)
+bones/24/rotation = Quaternion(0.097923, -0.369313, -0.0965133, 0.919078)
+bones/26/rotation = Quaternion(0.16494, 0.983698, -0.041598, 0.0583345)
+bones/27/rotation = Quaternion(0.0980967, 0.0146027, -0.578678, 0.809503)
+bones/29/rotation = Quaternion(0.671287, 0.232597, -0.300769, 0.636247)
+bones/30/rotation = Quaternion(0.583577, -0.161551, -0.00387952, 0.795817)
+bones/31/rotation = Quaternion(-0.469217, -0.0545902, 0.0661954, 0.878905)
+bones/32/rotation = Quaternion(0.0327933, -0.00971649, -0.00662056, 0.999393)
+bones/34/rotation = Quaternion(0.951368, -0.181198, 0.128426, 0.213479)
+bones/35/rotation = Quaternion(0.216705, 0.0517197, 0.0902948, 0.970676)
+bones/36/rotation = Quaternion(-0.418032, 0.0700275, -0.0928278, 0.90096)
+bones/37/rotation = Quaternion(0.370428, 0.077052, -0.152657, 0.912985)
