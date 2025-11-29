@@ -107,6 +107,10 @@ var current_module : Module
 
 var pocket_item 
 
+var dead : bool = true
+
+@onready var dead_layer = $PPLayer/DeadLayer
+
 func _ready() -> void:
 	Global.player = self
 	changeModule(modules.initial_module)
@@ -333,3 +337,10 @@ func pickup(item):
 
 func get_hit(amount):
 	health -= amount
+	if health <= 0.0:
+		die()
+
+func die():
+	movement_block = true
+	mouse_block = true
+	dead_layer.show()

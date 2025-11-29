@@ -18,6 +18,8 @@ func PhysicsUpdate(delta: float) -> void:
 		var direction = npc.global_position.direction_to(Global.player.global_position)
 		var target_rotation = Vector3(0, atan2(direction.x, direction.z), 0)
 		npc.rotate_to_target(target_rotation)
+		if !npc.gun_barrel:
+			return
 		npc.gun_barrel.look_at(Global.player.global_position + Vector3(0,1,0), Vector3.UP)
 		if shoot_timer == 0:
 			shoot_timer = 30

@@ -20,7 +20,7 @@ var is_frozen := false
 var dead : bool = false
 
 var weapon = 0 #0 - pistol/ 1 - shotgun
-
+var spot_meter : int = 0
 func _physics_process(delta: float) -> void:
 	if Global.time_freeze == true:
 		is_frozen = true
@@ -31,7 +31,7 @@ func _physics_process(delta: float) -> void:
 		freeze_factor = lerp(freeze_factor, 0.0, delta * freeze_speed)
 	else:
 		freeze_factor = lerp(freeze_factor, 1.0, delta * freeze_speed)
-
+	spot_meter -=10
 func walk(delta):
 	if freeze_factor <= 0.01:
 		return
@@ -69,7 +69,10 @@ func see_player():
 	if player_seek_ray.is_colliding():
 		var col = player_seek_ray.get_collider()
 		if col.is_in_group("player"):
-			return true
+			spot_meter += 30
+			if spot_meter > 100:
+				if spot_meter >= 100:
+					return true
 	return false
 
 

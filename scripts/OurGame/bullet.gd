@@ -8,6 +8,8 @@ extends SlowableRigidbody
 func _ready() -> void:
 	slowing_val = 0.8
 # publiczna funkcja inicjująca pocisk
+	await get_tree().create_timer(3.0,false).timeout
+	queue_free()
 
 
 
