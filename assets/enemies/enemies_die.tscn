@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d3bi6nvtgjegt"]
 
-[ext_resource type="PackedScene" uid="uid://grdf8iu58yqo" path="res://Zombie Dying.fbx" id="1_unsjk"]
+[ext_resource type="PackedScene" uid="uid://ldhec5g1coob" path="res://assets/enemies/Zombie Dying.fbx" id="1_unsjk"]
 
 [node name="Zombie Dying" instance=ExtResource("1_unsjk")]
 

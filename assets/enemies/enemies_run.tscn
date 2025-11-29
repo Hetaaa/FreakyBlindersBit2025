@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bggwkgg8ena4n"]
 
-[ext_resource type="PackedScene" uid="uid://71u2flw1fwt5" path="res://Fast Run.fbx" id="1_8vv8m"]
+[ext_resource type="PackedScene" uid="uid://bqojub27kssfi" path="res://assets/enemies/Fast Run.fbx" id="1_8vv8m"]
 
 [node name="Fast Run" instance=ExtResource("1_8vv8m")]
 
