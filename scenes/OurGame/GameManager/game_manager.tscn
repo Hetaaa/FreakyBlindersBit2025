@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://n6se2fiejbf"]
+
+[ext_resource type="PackedScene" uid="uid://d2ktr1csnv0wm" path="res://scenes/OurGame/World.tscn" id="1_vlfkm"]
+
+[node name="GameManager" type="Node"]
+
+[node name="CurrentScene" type="Node" parent="."]
+
+[node name="World" parent="CurrentScene" instance=ExtResource("1_vlfkm")]
