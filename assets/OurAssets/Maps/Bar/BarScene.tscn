@@ -201,7 +201,7 @@ shape = SubResource("BoxShape3D_fvjtv")
 debug_color = Color(0, 0.61356306, 0.60228264, 1)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Model/Kolizje/StaticBody3D14"]
-transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, -0.5751896, 4.6565976, -27.817974)
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, -0.5751896, 4.353765, -27.817974)
 shape = SubResource("BoxShape3D_v7gus")
 debug_color = Color(0, 0.61356306, 0.60228264, 1)
 
