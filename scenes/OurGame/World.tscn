@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://d2ktr1csnv0wm"]
+[gd_scene load_steps=10 format=3 uid="uid://d2ktr1csnv0wm"]
 
 [ext_resource type="Texture2D" uid="uid://0ishtn1wlx5w" path="res://assets/OurAssets/Textures/dev/Green/texture_01.png" id="1_f4s6c"]
 [ext_resource type="PackedScene" uid="uid://rp5hfwm874u3" path="res://scenes/OurGame/Player.tscn" id="1_oyjwk"]
 [ext_resource type="PackedScene" uid="uid://bcn4qi4jd7i1p" path="res://scenes/OurGame/soft_rigidbody.tscn" id="3_eppno"]
+[ext_resource type="PackedScene" uid="uid://b02jbk56pyr4b" path="res://scenes/OurGame/enemy.tscn" id="4_vxkh1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oyjwk"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -15,6 +16,10 @@ sky_material = SubResource("ProceduralSkyMaterial_oyjwk")
 background_mode = 2
 sky = SubResource("Sky_f4s6c")
 tonemap_mode = 2
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_f6xgv"]
+vertices = PackedVector3Array(-6.882324, 0.15563965, -5.244629, -6.882324, 0.15563965, 5.255371, 6.867676, 0.15563965, 5.255371, 6.867676, 0.15563965, -5.244629)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eppno"]
 albedo_texture = ExtResource("1_f4s6c")
@@ -29,16 +34,22 @@ environment = SubResource("Environment_eppno")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.38275146, 0)
-material_override = SubResource("StandardMaterial3D_eppno")
-use_collision = true
-size = Vector3(14.764648, 0.42321777, 11.489258)
-
 [node name="Player" parent="." instance=ExtResource("1_oyjwk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3732042, 0.07859242, 1.0212064)
 
 [node name="Kloc" parent="." instance=ExtResource("3_eppno")]
 transform = Transform3D(0.58332866, 0, 0.81223625, 0, 1, 0, -0.81223625, 0, 0.58332866, 1.3417685, 3.4802237, -1.1833019)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_f6xgv")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.38275146, 0)
+material_override = SubResource("StandardMaterial3D_eppno")
+use_collision = true
+size = Vector3(14.764648, 0.42321777, 11.489258)
+
+[node name="Enemy" parent="." instance=ExtResource("4_vxkh1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8541656, -0.17114305, 4.197281)
 
 [editable path="Player"]

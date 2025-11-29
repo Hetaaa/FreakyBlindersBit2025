@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://rp5hfwm874u3"]
+[gd_scene load_steps=5 format=3 uid="uid://rp5hfwm874u3"]
 
 [ext_resource type="Script" uid="uid://cjsm80hf70kc7" path="res://scripts/OurGame/player.gd" id="1_8arhe"]
+[ext_resource type="Script" uid="uid://dternnnmavtke" path="res://scripts/player/hitbox.gd" id="2_xyhs7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v7t4x"]
 radius = 0.4267578
 height = 1.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8arhe"]
+size = Vector3(0.8186035, 1.8088989, 0.9025879)
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_8arhe")
@@ -33,3 +37,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.65937436)
 
 [node name="StandUpCheck" type="RayCast3D" parent="Head"]
 target_position = Vector3(0, 0.39, 0)
+
+[node name="Hitbox" type="Area3D" parent="."]
+collision_layer = 128
+collision_mask = 128
+script = ExtResource("2_xyhs7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9049988, 0)
+shape = SubResource("BoxShape3D_8arhe")

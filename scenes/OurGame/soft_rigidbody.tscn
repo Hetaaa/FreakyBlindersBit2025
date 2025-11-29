@@ -10,7 +10,6 @@ bounce = 1.0
 [sub_resource type="BoxShape3D" id="BoxShape3D_f4s6c"]
 
 [node name="Kloc" type="RigidBody3D"]
-transform = Transform3D(0.5833286, 0, 0.81223625, 0, 1, 0, -0.81223625, 0, 0.5833286, 0, 0, 0)
 mass = 60.0
 physics_material_override = SubResource("PhysicsMaterial_f4s6c")
 freeze_mode = 1

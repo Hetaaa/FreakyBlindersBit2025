@@ -95,7 +95,7 @@ var mouse_block : bool = false
 var camera_update_block : bool = false
 var movement_block : bool = false
 
-
+var health : int = 100
 
 func _ready() -> void:
 	Global.player = self
@@ -300,3 +300,6 @@ func _push_away_rigid_bodies():
 
 func sensitivity_change(value) -> void:
 	SENSITIVITY=value
+
+func get_hit(amount):
+	health -= amount
