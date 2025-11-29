@@ -3,7 +3,8 @@ class_name Player
 
 #Czulosc rozgladania sie 
 @export var SENSITIVITY : float = 0.003
-
+#zmienna dla rzucanego elementu
+var Throwable=preload("res://scenes/OurGame/throwable.tscn")
 #Siła skoku
 var jump_velocity = 4.5
 
@@ -105,6 +106,7 @@ func _ready() -> void:
 
 
 
+
 #Ta funkcja odpala się kiedy poruszysz myszką
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -134,11 +136,11 @@ func _physics_process(delta: float) -> void:
 	
 	movement(delta)
 	if Input.is_action_just_pressed("freeze_time"):
-		Global.time_freeze = !Global.time_freeze
-		Global.just_unfreezed = true
+		Global.toggle_freeze()
 	_push_away_rigid_bodies()
 	#Potrzebna funkcja by gracz mógł przetwarzać ruch
 	move_and_slide()
+	throw()
 
 
 #Funkcja kiwania głową
@@ -300,3 +302,22 @@ func _push_away_rigid_bodies():
 
 func sensitivity_change(value) -> void:
 	SENSITIVITY=value
+
+func throw():
+	if Input.is_action_just_released("throw"):
+		# Tworzenie nowej petardy
+		var Throwable_spawn = Throwable.instantiate()
+		Throwable_spawn.position = $Head/Eyes/Throwpossiton.global_position
+		get_tree().current_scene.add_child(Throwable_spawn)
+		# Impuls rzutu
+		var throw_force = -8.0
+		var up_direction = 3.5
+		
+		var player_rotation = camera.global_transform.basis.z.normalized()
+		Throwable_spawn.apply_central_impulse(player_rotation * throw_force + Vector3(0, up_direction, 0))
+		# Losowy obrót
+		Throwable_spawn.angular_velocity = Vector3(
+			randf_range(-8.0, 8.0),
+			randf_range(-8.0, 8.0),
+			randf_range(-8.0, 8.0)
+		)
