@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3uslpx8f7ml4"]
+
+[ext_resource type="PackedScene" uid="uid://dcrpgvavoet2u" path="res://assets/OurAssets/Propy/lowpoly_french_fries.glb" id="1_gmhui"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3mro8"]
+size = Vector3(0.29766846, 0.7175293, 0.63220215)
+
+[node name="Fryty" type="RigidBody3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_gmhui")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.021879196, 0, 0.020854473)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.006378174, 0.21753603, 0.009277344)
+shape = SubResource("BoxShape3D_3mro8")

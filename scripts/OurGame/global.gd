@@ -1,6 +1,5 @@
 extends Node
 
-signal highlight_changed(is_active: bool)
 
 var player : Player
 

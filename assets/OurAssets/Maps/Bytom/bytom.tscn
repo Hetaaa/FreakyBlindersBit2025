@@ -1,0 +1,247 @@
+[gd_scene load_steps=21 format=3 uid="uid://7dtfclleauxr"]
+
+[ext_resource type="PackedScene" uid="uid://cuutkf84avg0c" path="res://assets/OurAssets/Maps/Bytom/model/korytarz.glb" id="1_1uk7x"]
+[ext_resource type="PackedScene" uid="uid://rp5hfwm874u3" path="res://scenes/OurGame/Player.tscn" id="2_1y50q"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vxy7e"]
+size = Vector3(4.0398254, 5.6989746, 2.1013184)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_exyli"]
+size = Vector3(1.6641846, 5.1240845, 5.814148)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cfkgs"]
+size = Vector3(3.453003, 3.9788952, 1.083435)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qpvti"]
+size = Vector3(1.0053711, 7.496704, 4.1174316)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ok4as"]
+size = Vector3(6.218689, 5.052124, 4.256592)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e3y1k"]
+size = Vector3(1, 1, 0.59033203)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2q34d"]
+size = Vector3(7.1413574, 7.0687256, 7.2593994)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8bh53"]
+size = Vector3(6.06369, 5.6123047, 4.0994797)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pnpeq"]
+size = Vector3(6.06369, 5.6123047, 4.0994797)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ybyk7"]
+size = Vector3(6.06369, 5.6123047, 4.0994797)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_57bt1"]
+size = Vector3(0.42681885, 1.1772156, 0.74653053)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ausmi"]
+size = Vector3(0.42681885, 1.1772156, 0.74653053)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3yyq6"]
+size = Vector3(0.5991287, 2.2203903, 0.74653053)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o6jew"]
+size = Vector3(1.3072815, 2.9263763, 0.74653053)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tpnni"]
+size = Vector3(1.3072815, 1.9465866, 2.6242418)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vxy7e"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_apnag"]
+sky_material = SubResource("ProceduralSkyMaterial_vxy7e")
+
+[sub_resource type="Environment" id="Environment_exyli"]
+background_mode = 2
+sky = SubResource("Sky_apnag")
+tonemap_mode = 2
+
+[node name="Bytom" type="Node3D"]
+
+[node name="Miasto" type="Node3D" parent="."]
+
+[node name="Sketchfab_Scene" parent="Miasto" instance=ExtResource("1_1uk7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5554886, 0, 7.8935575)
+
+[node name="Kolizje" type="Node3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Kolizje"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kolizje/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2846289, 4.3729315, -2.0404322)
+shape = SubResource("BoxShape3D_vxy7e")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Kolizje"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kolizje/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3320923, 4.1704965, 1.2796326)
+shape = SubResource("BoxShape3D_exyli")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Kolizje"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kolizje/StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2845054, 4.6308813, 3.6469421)
+shape = SubResource("BoxShape3D_cfkgs")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="Kolizje"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.511678, 0, -5.3036923)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kolizje/StaticBody3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0026855469, 3.248352, 10.632162)
+shape = SubResource("BoxShape3D_qpvti")
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="Kolizje"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8778245, 0, 4.4422603)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kolizje/StaticBody3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8448963, 4.1664677, 5.020453)
+shape = SubResource("BoxShape3D_ok4as")
+
+[node name="StaticBody3D6" type="StaticBody3D" parent="Kolizje"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kolizje/StaticBody3D6"]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 2.0526357, 10.241699)
+shape = SubResource("BoxShape3D_e3y1k")
+debug_color = Color(0.92, 0, 0.69, 0.9647059)
+
+[node name="StaticBody3D24" type="StaticBody3D" parent="Kolizje"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.030465, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kolizje/StaticBody3D24"]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, -0.0017747879, 10.241699)
+shape = SubResource("BoxShape3D_e3y1k")
+debug_color = Color(0.92, 0, 0.69, 0.9647059)
+
+[node name="StaticBody3D7" type="StaticBody3D" parent="Kolizje"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kolizje/StaticBody3D7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.858234, 3.0343628, 0.56320286)
+shape = SubResource("BoxShape3D_2q34d")
+
+[node name="StaticBody3D8" type="StaticBody3D" parent="Kolizje"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 9)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kolizje/StaticBody3D8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.531845, 5.3061523, 0.42432404)
+shape = SubResource("BoxShape3D_8bh53")
+
+[node name="StaticBody3D9" type="StaticBody3D" parent="Kolizje"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 9)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kolizje/StaticBody3D9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.617268, 5.3061523, 4.5312138)
+shape = SubResource("BoxShape3D_pnpeq")
+
+[node name="StaticBody3D10" type="StaticBody3D" parent="Kolizje"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5392885, 0, 14.909889)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kolizje/StaticBody3D10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.945719, 5.3061523, 1.788681)
+shape = SubResource("BoxShape3D_pnpeq")
+
+[node name="StaticBody3D11" type="StaticBody3D" parent="Kolizje"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5392885, 0, 14.909889)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kolizje/StaticBody3D11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5043807, 5.3061523, 3.8554077)
+shape = SubResource("BoxShape3D_pnpeq")
+
+[node name="StaticBody3D23" type="StaticBody3D" parent="Kolizje"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5392885, 0, 14.909889)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kolizje/StaticBody3D23"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0406885, 5.3061523, -8.656186)
+shape = SubResource("BoxShape3D_ybyk7")
+
+[node name="StaticBody3D12" type="StaticBody3D" parent="Kolizje"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.422618, 0, 12.795265)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kolizje/StaticBody3D12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5043807, 5.3061523, 3.8554077)
+shape = SubResource("BoxShape3D_pnpeq")
+
+[node name="StaticBody3D13" type="StaticBody3D" parent="Kolizje"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.509279, 0, 12.795265)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kolizje/StaticBody3D13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5043807, 5.3061523, 3.8554077)
+shape = SubResource("BoxShape3D_pnpeq")
+
+[node name="StaticBody3D14" type="StaticBody3D" parent="Kolizje"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.509279, 0, 12.795265)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kolizje/StaticBody3D14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39084053, 5.3061523, -0.2553463)
+shape = SubResource("BoxShape3D_pnpeq")
+
+[node name="StaticBody3D15" type="StaticBody3D" parent="Kolizje"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.509279, 0, 8.703035)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kolizje/StaticBody3D15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39084053, 5.3061523, -0.2553463)
+shape = SubResource("BoxShape3D_pnpeq")
+
+[node name="StaticBody3D16" type="StaticBody3D" parent="Kolizje"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.08044, 0, 5.3392525)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kolizje/StaticBody3D16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39084053, 5.3061523, -0.2553463)
+shape = SubResource("BoxShape3D_pnpeq")
+
+[node name="StaticBody3D18" type="StaticBody3D" parent="Kolizje"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.394885, 3.0483518, 1.3828378)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kolizje/StaticBody3D18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13033748, 0.054781437, -1.9853257)
+shape = SubResource("BoxShape3D_57bt1")
+debug_color = Color(0.9699635, 0, 0.42306373, 1)
+
+[node name="StaticBody3D17" type="StaticBody3D" parent="Kolizje"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.773591, 2.8753216, -0.70820606)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kolizje/StaticBody3D17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1606827, 0.17303014, 0.19243503)
+shape = SubResource("BoxShape3D_ausmi")
+debug_color = Color(0.9699635, 0, 0.42306373, 1)
+
+[node name="StaticBody3D21" type="StaticBody3D" parent="Kolizje"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.773591, 2.8753216, -0.70820606)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kolizje/StaticBody3D21"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2084208, 0.17303014, 5.4567976)
+shape = SubResource("BoxShape3D_3yyq6")
+debug_color = Color(2.6471912e-06, 0.6184858, 0.54030305, 1)
+
+[node name="StaticBody3D22" type="StaticBody3D" parent="Kolizje"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.773591, 2.8753216, -0.70820606)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kolizje/StaticBody3D22"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.261006, 0.6946175, 8.369345)
+shape = SubResource("BoxShape3D_3yyq6")
+debug_color = Color(2.6471912e-06, 0.6184858, 0.54030305, 1)
+
+[node name="StaticBody3D19" type="StaticBody3D" parent="Kolizje"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.773591, 2.8753216, -0.70820606)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kolizje/StaticBody3D19"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027191162, 1.0476105, 0.19243503)
+shape = SubResource("BoxShape3D_o6jew")
+debug_color = Color(0.9699635, 0, 0.42306373, 1)
+
+[node name="StaticBody3D20" type="StaticBody3D" parent="Kolizje"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.773591, 2.8753216, -0.70820606)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kolizje/StaticBody3D20"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3290715, -0.7018521, 1.0283091)
+shape = SubResource("BoxShape3D_tpnni")
+debug_color = Color(0.9699635, 0, 0.42306373, 1)
+
+[node name="Player" parent="." instance=ExtResource("2_1y50q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0029893, 2.8176386, 7.9307704)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_exyli")
