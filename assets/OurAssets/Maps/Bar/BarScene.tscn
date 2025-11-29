@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://76vb54xaugo8"]
+[gd_scene load_steps=21 format=3 uid="uid://76vb54xaugo8"]
 
 [ext_resource type="PackedScene" uid="uid://2hmonl0xsft5" path="res://assets/OurAssets/Maps/Bar/Model/bar.glb" id="1_msp8k"]
 [ext_resource type="PackedScene" uid="uid://rp5hfwm874u3" path="res://scenes/OurGame/Player.tscn" id="2_ls4xn"]
@@ -7,12 +7,12 @@
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 
-[sub_resource type="Sky" id="Sky_apnag"]
+[sub_resource type="Sky" id="Sky_ls4xn"]
 sky_material = SubResource("ProceduralSkyMaterial_ls4xn")
 
 [sub_resource type="Environment" id="Environment_ewqoi"]
 background_mode = 2
-sky = SubResource("Sky_apnag")
+sky = SubResource("Sky_ls4xn")
 tonemap_mode = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ls4xn"]
@@ -52,6 +52,9 @@ size = Vector3(1, 3.946045, 15.340271)
 size = Vector3(12.821777, 4.183838, 1.0566406)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fvjtv"]
+size = Vector3(17.200195, 1, 33.420654)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v7gus"]
 size = Vector3(17.200195, 1, 33.420654)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bwfle"]
@@ -195,6 +198,11 @@ transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Model/Kolizje/StaticBody3D14"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5751897, -0.46190572, -27.81798)
 shape = SubResource("BoxShape3D_fvjtv")
+debug_color = Color(0, 0.61356306, 0.60228264, 1)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Model/Kolizje/StaticBody3D14"]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, -0.5751896, 4.6565976, -27.817974)
+shape = SubResource("BoxShape3D_v7gus")
 debug_color = Color(0, 0.61356306, 0.60228264, 1)
 
 [node name="StaticBody3D15" type="StaticBody3D" parent="Model/Kolizje"]
