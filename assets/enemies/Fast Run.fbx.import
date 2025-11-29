@@ -3,40 +3,23 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-<<<<<<< HEAD
-uid="uid://bqojub27kssfi"
-path="res://.godot/imported/Fast Run.fbx-b09d65d2bd35564b13289c278cbff220.scn"
-=======
-<<<<<<<< HEAD:assets/enemies/Enemies_pistol_shoot.fbx.import
-uid="uid://56y7l85l4hrq"
-path="res://.godot/imported/Enemies_pistol_shoot.fbx-908b3ca5a0453f919383a57ac3017ebf.scn"
-========
 uid="uid://bpl8pbju6ia0i"
-path="res://.godot/imported/Fast Run.fbx-b09d65d2bd35564b13289c278cbff220.scn"
->>>>>>>> a348f2b (propyv1):assets/enemies/Fast Run.fbx.import
->>>>>>> a348f2b (propyv1)
+valid=false
 
 [deps]
 
 source_file="res://assets/enemies/Fast Run.fbx"
-dest_files=["res://.godot/imported/Fast Run.fbx-b09d65d2bd35564b13289c278cbff220.scn"]
 
 [params]
 
 nodes/root_type=""
 nodes/root_name=""
-<<<<<<< HEAD
-nodes/apply_root_scale=true
-nodes/root_scale=1.0
-nodes/import_as_skeleton_bones=false
-=======
 nodes/root_script=null
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
 nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true
->>>>>>> a348f2b (propyv1)
 meshes/ensure_tangents=true
 meshes/generate_lods=true
 meshes/create_shadow_meshes=true
@@ -50,17 +33,11 @@ animation/trimming=true
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-<<<<<<< HEAD
-=======
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
->>>>>>> a348f2b (propyv1)
 _subresources={}
-fbx/importer=0
+fbx/importer=1
 fbx/allow_geometry_helper_nodes=false
 fbx/embedded_image_handling=1
-<<<<<<< HEAD
-=======
-fbx/naming_version=2
->>>>>>> a348f2b (propyv1)
+fbx/naming_version=1

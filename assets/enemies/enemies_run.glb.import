@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://2hmonl0xsft5"
-path="res://.godot/imported/bar.glb-c48b8a5ae1d6a6058c5a83e094875499.scn"
+uid="uid://c11engjoovq4n"
+path="res://.godot/imported/enemies_run.glb-dca21b7afa10c90f032c0f09980fef78.scn"
 
 [deps]
 
-source_file="res://assets/OurAssets/Maps/Bar/Model/bar.glb"
-dest_files=["res://.godot/imported/bar.glb-c48b8a5ae1d6a6058c5a83e094875499.scn"]
+source_file="res://assets/enemies/enemies_run.glb"
+dest_files=["res://.godot/imported/enemies_run.glb-dca21b7afa10c90f032c0f09980fef78.scn"]
 
 [params]
 
