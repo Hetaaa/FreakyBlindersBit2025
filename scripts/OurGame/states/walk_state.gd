@@ -2,6 +2,7 @@ extends State
 
 func Enter():
 	npc = get_parent().npc
+	npc.change_animation("run")
 
 func PhysicsUpdate(delta: float) -> void:
 	if npc.dead and !Global.time_freeze:

@@ -15,9 +15,11 @@ var is_frozen := false
 
 @export var attack_type = 0 #0 - shoot/ 1- melee
 @onready var player_seek_ray : RayCast3D = $PlayerSeek
-@onready var gun_barrel : Node3D = $GunBarrel
-
+@onready var gun_barrel : Node3D = $Enemy_model/rig_001/Skeleton3D/BoneAttachment3D/WeaponBone/colt/GunBarrel
+@onready var anim_tree : AnimationTree = $AnimationTree
 var dead : bool = false
+
+var weapon = 0 #0 - pistol/ 1 - shotgun
 
 func _physics_process(delta: float) -> void:
 	if Global.time_freeze == true:
@@ -74,10 +76,20 @@ func see_player():
 func _on_hitbox_body_entered(body: Node3D) -> void:
 	
 	if body is RigidBody3D:
+		print(body.linear_velocity.length())
 		if body.saved_dir:
-			if body.linear_velocity.length() > 3.0:
+			if body.linear_velocity.length() > 0.7:
 				dead = true
 		else:
-			if body.linear_velocity.length() > 10.0:
+			if body.linear_velocity.length() > 1.0:
 				dead = true
 		
+
+func change_animation(anim):
+	if anim_tree:
+		anim_tree.set("parameters/Transition/transition_request", anim)
+		anim_tree.set("parameters/TimeSeek/seek_request", 0.0)
+
+func weapon_pick():
+	if weapon == 0:
+		pass
