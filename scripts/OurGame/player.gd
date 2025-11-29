@@ -3,7 +3,8 @@ class_name Player
 
 #Czulosc rozgladania sie 
 @export var SENSITIVITY : float = 0.003
-
+#zmienna dla rzucanego elementu
+var Throwable=preload("res://scenes/OurGame/throwable.tscn")
 #Siła skoku
 var jump_velocity = 4.5
 
@@ -146,13 +147,12 @@ func _physics_process(delta: float) -> void:
 	movement(delta)
 
 	if Input.is_action_just_pressed("freeze_time"):
-		Global.time_freeze = !Global.time_freeze
-		Global.just_unfreezed = true
-
+		Global.toggle_freeze()
 	_push_away_rigid_bodies()
 	#Potrzebna funkcja by gracz mógł przetwarzać ruch
 	updateModules(delta)
 	move_and_slide()
+	throw()
 
 
 #Funkcja kiwania głową

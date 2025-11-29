@@ -1,0 +1,39 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://e6g7k2bkvpud"
+path.s3tc="res://.godot/imported/old_street_17.png-595d6dff7c40d367d237a59038808529.s3tc.ctex"
+path.etc2="res://.godot/imported/old_street_17.png-595d6dff7c40d367d237a59038808529.etc2.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "7dbb1359c1562975ea9014b099b9a0be"
+}
+
+[deps]
+
+source_file="res://assets/OurAssets/Maps/Bytom/old_street_17.png"
+dest_files=["res://.godot/imported/old_street_17.png-595d6dff7c40d367d237a59038808529.s3tc.ctex", "res://.godot/imported/old_street_17.png-595d6dff7c40d367d237a59038808529.etc2.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

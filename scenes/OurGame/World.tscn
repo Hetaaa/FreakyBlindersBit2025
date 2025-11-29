@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bcn4qi4jd7i1p" path="res://scenes/OurGame/soft_rigidbody.tscn" id="3_eppno"]
 [ext_resource type="Texture2D" uid="uid://cuf6n50j2s8jc" path="res://assets/OurAssets/Models/Glass_Bottle_Garrafa.png" id="4_vxkh1"]
 [ext_resource type="PackedScene" uid="uid://b02jbk56pyr4b" path="res://scenes/OurGame/enemy.tscn" id="5_f6xgv"]
+[ext_resource type="Script" uid="uid://bxmqsl2sg2db2" path="res://assets/OurAssets/Glow/highlightable.gd" id="4_vxkh1"]
+[ext_resource type="Material" uid="uid://dv7gqqubxrjmv" path="res://assets/OurAssets/Glow/glow.tres" id="5_f6xgv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oyjwk"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -164,6 +166,15 @@ shape = SubResource("ConvexPolygonShape3D_slqf3")
 
 [node name="Enemy" parent="." instance=ExtResource("5_f6xgv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.279605, -0.17114258, 2.6062274)
+[node name="Throwpossiton" type="Marker3D" parent="Player/Head/Eyes" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28752935, -0.26521063, -0.4240055)
+
+[node name="Kloc" parent="." instance=ExtResource("3_eppno")]
+transform = Transform3D(0.58332866, 0, 0.81223625, 0, 1, 0, -0.81223625, 0, 0.58332866, 1.3417685, 3.4802237, -1.1833019)
+
+[node name="highlitable" type="Node3D" parent="Kloc"]
+script = ExtResource("4_vxkh1")
+outline_material = ExtResource("5_f6xgv")
 
 [editable path="Player"]
 [editable path="Bottle"]
