@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://f4dg6do3vq07"]
+
+[ext_resource type="PackedScene" uid="uid://lld2pwxyrhp4" path="res://assets/OurAssets/Propy/cigarette_jar/cigarette_jar.glb" id="1_320o5"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="cigarette_jar" parent="." instance=ExtResource("1_320o5")]
