@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://b02jbk56pyr4b"]
+[gd_scene load_steps=12 format=3 uid="uid://b02jbk56pyr4b"]
 
 [ext_resource type="Script" uid="uid://bpxn332aeiinf" path="res://scripts/Enemy and state_machine/enemy.gd" id="1_pd5ih"]
 [ext_resource type="Script" uid="uid://dpgid28ndfo8a" path="res://scripts/OurGame/states/walk_state.gd" id="2_cqlpw"]
 [ext_resource type="Script" uid="uid://cg5f42065rnlw" path="res://scripts/OurGame/state_machine.gd" id="2_wf3i2"]
 [ext_resource type="Script" uid="uid://kkxrnkcnsrnt" path="res://scripts/OurGame/states/attack_state.gd" id="4_vefjr"]
+[ext_resource type="Script" uid="uid://cb0j04ptuicle" path="res://scripts/OurGame/states/shoot.gd" id="5_plpd4"]
+[ext_resource type="Script" uid="uid://x40q0vbqfgsg" path="res://scripts/OurGame/states/dead_state.gd" id="6_lx67h"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wos7l"]
 radius = 0.4267578
@@ -44,6 +46,12 @@ script = ExtResource("2_cqlpw")
 [node name="Attack" type="Node" parent="StateMachine"]
 script = ExtResource("4_vefjr")
 
+[node name="Shoot" type="Node" parent="StateMachine"]
+script = ExtResource("5_plpd4")
+
+[node name="Dead" type="Node" parent="StateMachine"]
+script = ExtResource("6_lx67h")
+
 [node name="HitDeal" type="Area3D" parent="."]
 collision_layer = 128
 collision_mask = 128
@@ -59,3 +67,14 @@ collision_mask = 128
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99705505, 0)
 shape = SubResource("BoxShape3D_vefjr")
+
+[node name="PlayerSeek" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+target_position = Vector3(0, 0, -10)
+collision_mask = 513
+debug_shape_custom_color = Color(1, 0.5882353, 0, 1)
+
+[node name="GunBarrel" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3784604, 1.1737231, 0.916046)
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
