@@ -11,10 +11,12 @@ var slowing_val : float = 0.9
 
 func _ready() -> void:
 	pass
-func _physics_process(_delta):
+func PhysicsUpdate(delta):
+	pass
+func _physics_process(delta):
 	if freeze_timer>0:
 		freeze_timer -= 1
-	if Global.time_freeze and freeze_timer:
+	if Global.time_freeze and freeze_timer>0:
 		if !saved_dir:
 			saved_dir = true
 			
@@ -30,6 +32,7 @@ func _physics_process(_delta):
 			await get_tree().create_timer(0.1,false).timeout
 			Global.just_unfreezed = false
 			unfreezed = false
+	PhysicsUpdate(delta)
 func soft_freeze():
 	gravity_scale = 0
 	# spowalnia stopniowo
