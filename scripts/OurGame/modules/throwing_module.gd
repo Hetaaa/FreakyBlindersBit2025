@@ -22,10 +22,11 @@ func PhysicsUpdate(_delta):
 		throwable_spawn.freeze_timer = 50 
 		throwable_spawn.apply_central_impulse(player_rotation * throw_force + Vector3(0, up_direction, 0))
 		# Losowy obrót
-		
+		player.change_animation("throw")
 		throwable_spawn.angular_velocity = Vector3(
 			randf_range(-10.0, 10.0),
 			randf_range(-10.0, 10.0),
 			randf_range(-10.0, 10.0)
 		)
+		throwable_spawn.show()
 		player.changeModule(player.pickup_module)
