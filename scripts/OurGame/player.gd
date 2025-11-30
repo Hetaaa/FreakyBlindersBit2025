@@ -61,6 +61,7 @@ var sliding_window_max = 10
 #Pierwotne fov
 var base_fov = 70.0
 
+var i :int
 
 #Trzymacz kamery i ona sama
 @onready var head = $Head
@@ -76,6 +77,7 @@ var base_fov = 70.0
 #Krztałty kolizji gracza stojąca i kucania
 @onready var standing_collision_shape = $StandShape
 @onready var crouching_collision_shape = $CrouchShape
+
 
 
 
@@ -113,8 +115,11 @@ var dead : bool = true
 
 @onready var dead_layer = $PPLayer/DeadLayer
 
+@onready var stoptime: AnimationPlayer = $Head/Eyes/Camera3D/stoptime
+
 func _ready() -> void:
 	Global.player = self
+	Global.anihandler.connect(on_ani_change)
 	changeModule(modules.initial_module)
 	#Ustawiamy by myszką była zablokowana i można by było się obracać w 3D
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -159,7 +164,14 @@ func _physics_process(delta: float) -> void:
 	#Potrzebna funkcja by gracz mógł przetwarzać ruch
 	updateModules(delta)
 	move_and_slide()
-
+	
+func on_ani_change(is_active: bool):
+	if is_active:
+		stoptime.play("stoptime")
+	else:
+		stoptime.play("endstoptime")
+		
+	
 
 #Funkcja kiwania głową
 func headbob() -> void:
@@ -348,3 +360,4 @@ func die():
 	mouse_block = true
 	player_dead.emit()
 	dead_layer.show()
+	
