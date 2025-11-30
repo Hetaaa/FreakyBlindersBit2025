@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://rp5hfwm874u3"]
+[gd_scene load_steps=25 format=3 uid="uid://rp5hfwm874u3"]
 
 [ext_resource type="Script" uid="uid://cjsm80hf70kc7" path="res://scripts/OurGame/player.gd" id="1_8arhe"]
 [ext_resource type="Script" uid="uid://dternnnmavtke" path="res://scripts/player/hitbox.gd" id="2_xyhs7"]
@@ -12,8 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://bj4epsc5dvfhd" path="res://assets/OurAssets/noise/7-noise-texture-overlays-5.png" id="6_bfciw"]
 [ext_resource type="Shader" uid="uid://boswve8ohnxcp" path="res://assets/OurAssets/shaders/ppps1.gdshader" id="6_epjuq"]
 [ext_resource type="Script" uid="uid://d2mehkfqejsu" path="res://scripts/player/cig_module.gd" id="6_jy12i"]
-[ext_resource type="Texture2D" uid="uid://bk1kuj67iexfp" path="res://assets/OurAssets/Textures/dev/Light/texture_04.png" id="7_bfciw"]
 [ext_resource type="PackedScene" uid="uid://4vceobpo2444" path="res://scenes/OurGame/fpc.tscn" id="7_02c80"]
+[ext_resource type="Texture2D" uid="uid://bk1kuj67iexfp" path="res://assets/OurAssets/Textures/dev/Light/texture_04.png" id="7_bfciw"]
 [ext_resource type="Texture2D" uid="uid://bgjjifjr8j033" path="res://assets/OurAssets/Textures/hand_grab.png" id="9_galn3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v7t4x"]
@@ -47,7 +47,7 @@ tracks/1/keys = {
 "values": [Color(0.27999997, 0.39999986, 1, 0.2901961)]
 }
 
-[sub_resource type="Animation" id="Animation_bfciw"]
+[sub_resource type="Animation" id="Animation_visxa"]
 resource_name = "stoptime"
 length = 1.5
 tracks/0/type = "value"
@@ -57,10 +57,10 @@ tracks/0/path = NodePath("TextureRect2:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.00433979, 1.4666667),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 1.4666667),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0.05249999, 0.27066666, 0.35, 0.67058825), Color(0.4453, 0.677805, 0.73, 0), Color(0.14400001, 0.4, 0.3786666, 0.46666667)]
+"values": [Color(0.14400001, 0.4, 0.3786666, 0.46666667), Color(0.4453, 0.677805, 0.73, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -69,10 +69,27 @@ tracks/1/path = NodePath("TextureRect2:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.008333334, 1.4666667),
+"times": PackedFloat32Array(0, 1.4666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0.08839999, 0.26, 0.19994001, 0), Color(0.33620244, 0.44188982, 0.9412189, 0.8666667)]
+"values": [Color(0.33620244, 0.44188982, 0.9412189, 0.8666667), Color(0.08839999, 0.26, 0.19994001, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xrxs6"]
+resource_name = "noise"
+length = 0.16
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0066666603, 0.033333335, 0.06666667, 0.1, 0.13333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_yrqlq"), ExtResource("3_yrqlq"), ExtResource("4_visxa"), ExtResource("5_xrxs6"), ExtResource("6_bfciw")]
 }
 
 [sub_resource type="Animation" id="Animation_ksfr3"]
@@ -104,26 +121,9 @@ tracks/1/keys = {
 "values": [Color(0.27999997, 0.39999986, 1, 0.78431374), Color(0.27999997, 0.39999986, 1, 0.78431374)]
 }
 
-[sub_resource type="Animation" id="Animation_xrxs6"]
-resource_name = "noise"
-length = 0.16
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.0066666603, 0.033333335, 0.06666667, 0.1, 0.13333334),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("2_yrqlq"), ExtResource("3_yrqlq"), ExtResource("4_visxa"), ExtResource("5_xrxs6"), ExtResource("6_bfciw")]
-}
-
-[sub_resource type="Animation" id="Animation_visxa"]
+[sub_resource type="Animation" id="Animation_bfciw"]
 resource_name = "stoptime"
-length = 1.5
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -131,10 +131,10 @@ tracks/0/path = NodePath("TextureRect2:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.4666667),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.00433979, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(0.14400001, 0.4, 0.3786666, 0.46666667), Color(0.4453, 0.677805, 0.73, 0)]
+"values": [Color(0.05249999, 0.27066666, 0.35, 0.67058825), Color(0.4453, 0.677805, 0.73, 0), Color(0.14400001, 0.4, 0.3786666, 0.46666667)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -143,10 +143,10 @@ tracks/1/path = NodePath("TextureRect2:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.4666667),
+"times": PackedFloat32Array(0.008333334, 0.33333334),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0.33620244, 0.44188982, 0.9412189, 0.8666667), Color(0.08839999, 0.26, 0.19994001, 0)]
+"values": [Color(0.08839999, 0.26, 0.19994001, 0), Color(0.61681837, 0.9061183, 0.9769843, 0.7882353)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4fo85"]
@@ -349,6 +349,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HandIcon" type="TextureRect" parent="HudLayer"]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

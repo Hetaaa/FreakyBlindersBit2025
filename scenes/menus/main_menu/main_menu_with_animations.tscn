@@ -350,7 +350,6 @@ modulate = Color(1, 1, 1, 0)
 modulate = Color(1, 1, 1, 0)
 
 [node name="TitleLabel" parent="MenuContainer/TitleMargin/TitleContainer" index="0"]
-text = "Smoke Break"
 label_settings = SubResource("LabelSettings_2k5l7")
 
 [node name="SubTitleContainer" parent="MenuContainer/SubTitleMargin" index="0"]

@@ -3,6 +3,7 @@ extends Module
 
 func Enter():
 	player = get_parent().player
+	await get_tree().create_timer(1.8,false).timeout
 	player.change_animation("smoke")
 	player.mouse_block =true
 	player.movement_block = true
