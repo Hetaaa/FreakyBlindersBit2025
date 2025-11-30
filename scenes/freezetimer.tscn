@@ -6,12 +6,12 @@
 script = ExtResource("1_y0aop")
 
 [node name="FreezeTimer" type="Timer" parent="."]
-wait_time = 3.53
+wait_time = 3.4
 one_shot = true
 autostart = true
 
 [node name="Unfreeze" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 14.0
 one_shot = true
 autostart = true
 

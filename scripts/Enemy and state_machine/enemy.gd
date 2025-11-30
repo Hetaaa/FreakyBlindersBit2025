@@ -1,6 +1,8 @@
 extends CharacterBody3D
 class_name Npc
 
+signal died
+
 var SPEED = 2.5
 var can_walk : bool = true
 @onready var nav_agent : NavigationAgent3D = $NavAgent
