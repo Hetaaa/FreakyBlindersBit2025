@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqg0hnskry4uv"]
+
+[ext_resource type="PackedScene" uid="uid://b1clnes5ljxp6" path="res://assets/OurAssets/Propy/cat_-_ps1_low_poly_rigged.glb" id="1_4sk5u"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4sk5u"]
+radius = 0.119140625
+height = 0.7104492
+
+[node name="Kot" type="RigidBody3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_4sk5u")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.034899496, 0.99939084, 0, -0.99939084, 0.034899496, 0, 0.26067418, 0.019275367)
+shape = SubResource("CapsuleShape3D_4sk5u")

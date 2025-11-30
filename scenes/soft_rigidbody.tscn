@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcn4qi4jd7i1p"]
+
+[ext_resource type="Script" uid="uid://c2inmctofvfdt" path="res://scripts/OurGame/slowable_rigidbody/slowable_rigidbody.gd" id="1_63ms7"]
+
+[node name="SoftRigidbody" type="RigidBody3D"]
+collision_layer = 129
+collision_mask = 129
+mass = 60.0
+freeze_mode = 1
+script = ExtResource("1_63ms7")
+
+[node name="PickUpArea" type="Area3D" parent="."]
+collision_layer = 64
+collision_mask = 64

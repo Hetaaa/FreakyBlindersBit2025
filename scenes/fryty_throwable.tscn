@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxe5h8f8cj6c2"]
+
+[ext_resource type="Script" uid="uid://c2inmctofvfdt" path="res://scripts/OurGame/slowable_rigidbody/slowable_rigidbody.gd" id="1_uxrnt"]
+[ext_resource type="PackedScene" uid="uid://dcrpgvavoet2u" path="res://assets/OurAssets/Propy/lowpoly_french_fries.glb" id="2_x64a7"]
+[ext_resource type="PackedScene" uid="uid://dadhbfhvcqj16" path="res://assets/OurAssets/Glow/highlitable.tscn" id="3_xjjbq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4n8ct"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8leou"]
+size = Vector3(0.29766846, 0.7175293, 0.63220215)
+
+[node name="frytki" type="RigidBody3D"]
+collision_layer = 130
+collision_mask = 130
+mass = 60.0
+freeze_mode = 1
+script = ExtResource("1_uxrnt")
+
+[node name="PickUpArea" type="Area3D" parent="."]
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickUpArea"]
+shape = SubResource("BoxShape3D_4n8ct")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_x64a7")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.021879196, 0, 0.020854473)
+
+[node name="Highlitable" parent="Sketchfab_Scene/Sketchfab_model/e6398e8419b149399a727b00d0f0f973_obj_cleaner_materialmerger_gles" index="1" instance=ExtResource("3_xjjbq")]
+
+[node name="Highlitable" parent="Sketchfab_Scene/Sketchfab_model/e6398e8419b149399a727b00d0f0f973_obj_cleaner_materialmerger_gles/Object_3" index="0" instance=ExtResource("3_xjjbq")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.006378174, 0.21753603, 0.009277344)
+shape = SubResource("BoxShape3D_8leou")
+
+[editable path="Sketchfab_Scene"]

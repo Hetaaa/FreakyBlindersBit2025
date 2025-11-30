@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmdfq1qfou2gt"]
+
+[ext_resource type="Script" uid="uid://c2inmctofvfdt" path="res://scripts/OurGame/slowable_rigidbody/slowable_rigidbody.gd" id="1_enrd2"]
+[ext_resource type="PackedScene" uid="uid://b1clnes5ljxp6" path="res://assets/OurAssets/Propy/cat_-_ps1_low_poly_rigged.glb" id="2_7c4w8"]
+[ext_resource type="PackedScene" uid="uid://dadhbfhvcqj16" path="res://assets/OurAssets/Glow/highlitable.tscn" id="3_xmyay"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_28nim"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_s5fuh"]
+radius = 0.119140625
+height = 0.7104492
+
+[node name="kot" type="RigidBody3D"]
+collision_layer = 130
+collision_mask = 130
+mass = 60.0
+freeze_mode = 1
+script = ExtResource("1_enrd2")
+
+[node name="PickUpArea" type="Area3D" parent="."]
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickUpArea"]
+shape = SubResource("BoxShape3D_28nim")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_7c4w8")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="Highlitable" parent="Sketchfab_Scene/Sketchfab_model/246e2b0a801a475bae2a0a2d9f264bca_fbx/RootNode/Armature/Object_4/Skeleton3D" index="1" instance=ExtResource("3_xmyay")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.034899496, 0.99939084, 0, -0.99939084, 0.034899496, 0, 0.26067418, 0.019275367)
+shape = SubResource("CapsuleShape3D_s5fuh")
+
+[editable path="Sketchfab_Scene"]

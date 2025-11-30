@@ -1,10 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://d2ktr1csnv0wm"]
+[gd_scene load_steps=15 format=3 uid="uid://d2ktr1csnv0wm"]
 
 [ext_resource type="Texture2D" uid="uid://0ishtn1wlx5w" path="res://assets/OurAssets/Textures/dev/Green/texture_01.png" id="1_f4s6c"]
 [ext_resource type="PackedScene" uid="uid://rp5hfwm874u3" path="res://scenes/OurGame/Player.tscn" id="1_oyjwk"]
-[ext_resource type="PackedScene" uid="uid://bcn4qi4jd7i1p" path="res://scenes/OurGame/soft_rigidbody.tscn" id="3_eppno"]
-[ext_resource type="Script" uid="uid://bxmqsl2sg2db2" path="res://assets/OurAssets/Glow/highlightable.gd" id="4_vxkh1"]
-[ext_resource type="Material" uid="uid://dv7gqqubxrjmv" path="res://assets/OurAssets/Glow/glow.tres" id="5_f6xgv"]
+[ext_resource type="PackedScene" uid="uid://dio2f7phyf0uo" path="res://scenes/OurGame/static_models/glass_bottle.tscn" id="4_vxkh1"]
+[ext_resource type="PackedScene" uid="uid://b02jbk56pyr4b" path="res://scenes/OurGame/enemy.tscn" id="5_f6xgv"]
+[ext_resource type="PackedScene" uid="uid://05w0gk5w0qcy" path="res://assets/OurAssets/Propy/lowpoly_burger.glb" id="5_pev72"]
+[ext_resource type="PackedScene" uid="uid://dadhbfhvcqj16" path="res://assets/OurAssets/Glow/highlitable.tscn" id="6_dl5lw"]
+[ext_resource type="Texture2D" uid="uid://bwkvl24ue6kbw" path="res://assets/OurAssets/Textures/wylezek.png" id="7_slqf3"]
+[ext_resource type="Texture2D" uid="uid://dh6xvqisxn6v8" path="res://assets/OurAssets/Textures/ksiadz.png" id="8_dl5lw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oyjwk"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -18,6 +21,11 @@ background_mode = 2
 sky = SubResource("Sky_f4s6c")
 tonemap_mode = 2
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_f6xgv"]
+vertices = PackedVector3Array(-1.6323242, 0.117248535, -3.744629, -0.8823242, 0.117248535, -4.494629, -1.1323242, 0.117248535, -4.744629, -6.382324, 0.117248535, -4.744629, 0.36767578, 0.117248535, 4.755371, 0.6176758, 0.117248535, 1.5053711, -0.8823242, 0.117248535, 1.5053711, -1.6323242, 0.117248535, 0.7553711, -6.382324, 0.117248535, 4.755371, 5.117676, 0.117248535, 1.5053711, 6.367676, 0.117248535, 4.755371, 5.117676, 0.117248535, -4.494629, 6.367676, 0.117248535, -4.744629, 5.867676, 0.117248535, 0.7553711, 5.867676, 0.117248535, -3.744629, 0.36767578, 4.1172485, -2.494629, 0.36767578, 4.1172485, -0.4946289, 3.8676758, 4.1172485, -0.4946289, 3.8676758, 4.1172485, -2.494629, 0.6176758, 0.117248535, -2.244629, 0.6176758, 0.117248535, -0.7446289, 3.6176758, 0.117248535, -0.7446289, 3.6176758, 0.117248535, -2.244629)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(6, 5, 4), PackedInt32Array(6, 4, 7), PackedInt32Array(7, 4, 8), PackedInt32Array(0, 7, 3), PackedInt32Array(3, 7, 8), PackedInt32Array(5, 9, 4), PackedInt32Array(4, 9, 10), PackedInt32Array(1, 2, 11), PackedInt32Array(11, 2, 12), PackedInt32Array(10, 9, 13), PackedInt32Array(14, 12, 13), PackedInt32Array(13, 12, 10), PackedInt32Array(11, 12, 14), PackedInt32Array(18, 17, 15), PackedInt32Array(15, 17, 16), PackedInt32Array(22, 21, 19), PackedInt32Array(19, 21, 20)]
+agent_radius = 0.8
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eppno"]
 albedo_texture = ExtResource("1_f4s6c")
 uv1_triplanar = true
@@ -29,25 +37,57 @@ environment = SubResource("Environment_eppno")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_energy = 0.01
 shadow_enabled = true
-
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.38275146, 0)
-material_override = SubResource("StandardMaterial3D_eppno")
-use_collision = true
-size = Vector3(14.764648, 0.42321777, 11.489258)
 
 [node name="Player" parent="." instance=ExtResource("1_oyjwk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3732042, 0.07859242, 1.0212064)
 
-[node name="Throwpossiton" type="Marker3D" parent="Player/Head/Eyes" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28752935, -0.26521063, -0.4240055)
+[node name="Throwpossiton2" type="Marker3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28752935, 1.4347894, -0.4240055)
 
-[node name="Kloc" parent="." instance=ExtResource("3_eppno")]
-transform = Transform3D(0.58332866, 0, 0.81223625, 0, 1, 0, -0.81223625, 0, 0.58332866, 1.3417685, 3.4802237, -1.1833019)
+[node name="Throwpossiton" type="Marker3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28752935, 1.4347894, -0.4240055)
 
-[node name="highlitable" type="Node3D" parent="Kloc"]
-script = ExtResource("4_vxkh1")
-outline_material = ExtResource("5_f6xgv")
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_f6xgv")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.38275146, 0)
+material_override = SubResource("StandardMaterial3D_eppno")
+use_collision = true
+collision_layer = 3
+collision_mask = 3
+size = Vector3(14.764648, 0.42321777, 11.489258)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1083984, 1.3797302, -1.3896484)
+use_collision = true
+size = Vector3(5.216797, 4.5249634, 3.7792969)
+
+[node name="Glass_Bottle" parent="." instance=ExtResource("4_vxkh1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28726572, 0.16045663, 3.879026)
+
+[node name="SoftRigidbody" parent="." instance=ExtResource("5_pev72")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1972013, -0.16754338, 5.0551205)
+
+[node name="burger" parent="." instance=ExtResource("5_pev72")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34990147, -0.16754362, 5.1559873)
+
+[node name="gasnica" parent="." instance=ExtResource("6_pev72")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.162885, -0.17114252, 4.3128095)
+
+[node name="Decal" type="Decal" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 3.7506943, 1.58673, 0.49368608)
+size = Vector3(0.91918945, 0.06665039, 1.225708)
+texture_albedo = ExtResource("7_slqf3")
+
+[node name="Decal2" type="Decal" parent="."]
+transform = Transform3D(0.815, 0, 0, 0, -3.5624783e-08, -0.815, 0, 0.815, -3.5624783e-08, 2.3677995, 1.58673, 0.4969982)
+size = Vector3(0.91918945, 0.07006836, 1.225708)
+texture_albedo = ExtResource("8_dl5lw")
+
+[node name="Enemy" parent="." instance=ExtResource("5_f6xgv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.611997, -0.014027268, 2.1299121)
 
 [editable path="Player"]

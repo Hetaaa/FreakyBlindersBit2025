@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ltq5ymp2x7v4"]
+
+[ext_resource type="PackedScene" uid="uid://05w0gk5w0qcy" path="res://assets/OurAssets/Propy/lowpoly_burger.glb" id="1_7u64s"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_uavt7"]
+height = 0.47601318
+radius = 1.0048828
+
+[node name="burger" type="RigidBody3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_7u64s")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.07864326, 0, -0.0071698427)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.07572314, 0.078595564, 0)
+shape = SubResource("CylinderShape3D_uavt7")

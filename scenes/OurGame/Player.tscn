@@ -1,12 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://rp5hfwm874u3"]
+[gd_scene load_steps=10 format=3 uid="uid://rp5hfwm874u3"]
 
 [ext_resource type="Script" uid="uid://cjsm80hf70kc7" path="res://scripts/OurGame/player.gd" id="1_8arhe"]
+[ext_resource type="Script" uid="uid://dternnnmavtke" path="res://scripts/player/hitbox.gd" id="2_xyhs7"]
+[ext_resource type="Script" uid="uid://dknvsvr0u002a" path="res://scripts/OurGame/player/modules.gd" id="3_88cnv"]
+[ext_resource type="Script" uid="uid://yj2nw7wg1m6v" path="res://scripts/OurGame/modules/throwing_module.gd" id="4_g6t73"]
+[ext_resource type="Script" uid="uid://cy18kvgidm2mg" path="res://scripts/OurGame/modules/pick_up_module.gd" id="5_g6t73"]
+[ext_resource type="Shader" uid="uid://boswve8ohnxcp" path="res://assets/OurAssets/shaders/ppps1.gdshader" id="6_epjuq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v7t4x"]
 radius = 0.4267578
 height = 1.8
 
-[node name="Player" type="CharacterBody3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_8arhe"]
+size = Vector3(0.8186035, 1.8088989, 0.9025879)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_02c80"]
+shader = ExtResource("6_epjuq")
+shader_parameter/enabled = true
+shader_parameter/dithering = true
+shader_parameter/colors = 16
+shader_parameter/dither_size = 3
+
+[node name="Player" type="CharacterBody3D" groups=["player"]]
+collision_layer = 513
+collision_mask = 513
 script = ExtResource("1_8arhe")
 
 [node name="StandShape" type="CollisionShape3D" parent="."]
@@ -27,9 +44,51 @@ current = true
 
 [node name="VisRay" type="RayCast3D" parent="Head/Eyes/Camera3D"]
 target_position = Vector3(0, 0, -1.885)
+collision_mask = 65
+collide_with_areas = true
 
 [node name="ThrowPoint" type="Node3D" parent="Head/Eyes/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.65937436)
 
 [node name="StandUpCheck" type="RayCast3D" parent="Head"]
 target_position = Vector3(0, 0.39, 0)
+
+[node name="Hitbox" type="Area3D" parent="."]
+collision_layer = 128
+collision_mask = 128
+script = ExtResource("2_xyhs7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9049988, 0)
+shape = SubResource("BoxShape3D_8arhe")
+
+[node name="Modules" type="Node" parent="." node_paths=PackedStringArray("player", "initial_module")]
+script = ExtResource("3_88cnv")
+player = NodePath("..")
+initial_module = NodePath("PickUp")
+
+[node name="Throwing" type="Node" parent="Modules"]
+script = ExtResource("4_g6t73")
+
+[node name="PickUp" type="Node" parent="Modules"]
+script = ExtResource("5_g6t73")
+
+[node name="PPLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="DeadLayer" type="ColorRect" parent="PPLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5372549, 0, 0.05490196, 0.5137255)
+
+[node name="ColorRect" type="ColorRect" parent="PPLayer"]
+material = SubResource("ShaderMaterial_02c80")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
