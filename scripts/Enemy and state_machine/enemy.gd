@@ -83,10 +83,10 @@ func _on_hitbox_body_entered(body: Node3D) -> void:
 	if body is RigidBody3D:
 		print(body.linear_velocity.length())
 		if body.saved_dir:
-			if body.linear_velocity.length() > 0.7:
+			if body.linear_velocity.length() > 0.01:
 				dead = true
 		else:
-			if body.linear_velocity.length() > 1.0:
+			if body.linear_velocity.length() > 0.2:
 				dead = true
 		
 		

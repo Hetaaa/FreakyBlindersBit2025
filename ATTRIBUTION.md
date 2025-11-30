@@ -7,7 +7,7 @@
 ### Patryk Tkaczewski
 ### Jakub Pakosz
 
-## Sourced
+## Sources
 #### Barranco Bar
 Author: McPato  
 License: CC0  

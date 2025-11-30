@@ -125,35 +125,35 @@ script = ExtResource("1_pd5ih")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06279123, 0)
 
 [node name="rig_001" parent="Enemy_model" index="0"]
-transform = Transform3D(0.9717664, -0.021120703, -0.23499763, -0.055118162, 0.94810605, -0.31313798, 0.22941655, 0.31724936, 0.9201743, 0.008770325, 0.020312576, -0.2891606)
+transform = Transform3D(0.9717664, -0.021120703, -0.2349976, -0.055118155, 0.94810605, -0.31313798, 0.22941652, 0.31724936, 0.9201743, 0.008770325, 0.020312576, -0.2891606)
 
 [node name="Skeleton3D" parent="Enemy_model/rig_001" index="0"]
-bones/1/rotation = Quaternion(-0.048266172, -0.027284427, 0.030149097, 0.9980065)
-bones/2/rotation = Quaternion(0.031830635, -0.06956581, 0.047882657, 0.99591905)
-bones/3/rotation = Quaternion(0.26230183, 0.011957517, 0.009804132, 0.964862)
-bones/4/rotation = Quaternion(-0.17397727, 0.013085329, 0.008238751, 0.9846283)
-bones/5/rotation = Quaternion(-0.01714756, 0.011628711, 0.010191999, 0.9997334)
-bones/7/rotation = Quaternion(-0.4286377, -0.517944, -0.51895833, 0.52790725)
-bones/8/rotation = Quaternion(-0.122799836, 0.5518557, -0.48339492, 0.6683598)
-bones/9/rotation = Quaternion(0.6566437, 0.07512011, 0.009619503, 0.75038886)
-bones/10/rotation = Quaternion(0.14546286, -0.40550518, 0.21292199, 0.8769666)
-bones/18/rotation = Quaternion(-0.3884205, 0.54761016, 0.5738118, 0.4690337)
-bones/19/rotation = Quaternion(-0.48515147, -0.7321677, 0.17103863, 0.44643515)
-bones/20/rotation = Quaternion(0.4607485, -0.088404745, -0.006749854, 0.88309115)
-bones/21/rotation = Quaternion(0.11487046, 0.34888858, -0.15323043, 0.91738874)
-bones/29/rotation = Quaternion(0.98734295, -0.017774995, -0.1265529, 0.09392745)
-bones/30/rotation = Quaternion(0.49405688, -0.067251906, -0.027949741, 0.86637396)
-bones/31/rotation = Quaternion(-0.24851437, -0.06372904, -0.018864164, 0.9663454)
-bones/32/rotation = Quaternion(0.045679275, 0.00023009544, 5.093998e-05, 0.9989562)
-bones/34/rotation = Quaternion(0.8325268, 0.11330809, -0.022677826, 0.5417991)
-bones/35/rotation = Quaternion(0.24710704, -0.042484272, -0.023516562, 0.96777076)
-bones/36/rotation = Quaternion(-0.5197, -0.022366231, 0.032755718, 0.8534277)
-bones/37/rotation = Quaternion(-0.018500673, -4.324238e-05, 7.84737e-05, 0.99982893)
+bones/1/rotation = Quaternion(-0.0501105, -0.017127238, 0.025637142, 0.99826765)
+bones/2/rotation = Quaternion(0.028170355, -0.04367567, 0.037369996, 0.9979491)
+bones/3/rotation = Quaternion(0.25694942, 0.010330077, 0.009694805, 0.9663211)
+bones/4/rotation = Quaternion(-0.17944114, 0.011456965, 0.00833294, 0.9836667)
+bones/5/rotation = Quaternion(-0.0226946, 0.010005736, 0.010029207, 0.99964213)
+bones/7/rotation = Quaternion(-0.47324353, -0.46161518, -0.56376904, 0.4950925)
+bones/8/rotation = Quaternion(-0.16863148, 0.60408765, -0.5488013, 0.55268323)
+bones/9/rotation = Quaternion(0.21565293, 0.09726608, 0.003159054, 0.9716085)
+bones/10/rotation = Quaternion(0.114393875, -0.39908096, 0.12180666, 0.90156066)
+bones/18/rotation = Quaternion(-0.4383031, 0.49048883, 0.59971684, 0.45568722)
+bones/19/rotation = Quaternion(-0.35978642, -0.7150273, 0.32729706, 0.5021617)
+bones/20/rotation = Quaternion(0.4687889, -0.08798428, -0.0068675745, 0.8788906)
+bones/21/rotation = Quaternion(0.29312852, 0.34985796, -0.20866208, 0.8649482)
+bones/29/rotation = Quaternion(0.9533862, 0.0029600044, -0.16748637, 0.25098708)
+bones/30/rotation = Quaternion(0.76025176, -0.044966765, -0.053498838, 0.6458584)
+bones/31/rotation = Quaternion(-0.23878393, -0.059757546, -0.0521593, 0.96782786)
+bones/32/rotation = Quaternion(0.07103209, 0.0003586009, 7.908614e-05, 0.99747396)
+bones/34/rotation = Quaternion(0.89039636, 0.10359605, 0.03743714, 0.4416569)
+bones/35/rotation = Quaternion(0.30068037, -0.045835383, -0.027396088, 0.95222896)
+bones/36/rotation = Quaternion(-0.63706875, -0.045183904, 0.070568964, 0.76623887)
+bones/37/rotation = Quaternion(-0.014226861, -8.207424e-05, 8.096176e-05, 0.99989885)
 
 [node name="Highlitable2" parent="Enemy_model/rig_001/Skeleton3D/male_player" index="0" instance=ExtResource("3_rlsfy")]
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Enemy_model/rig_001/Skeleton3D" index="1"]
-transform = Transform3D(-0.8776697, -0.47001386, -0.09371525, 0.39470398, -0.8197763, 0.41494104, -0.27185336, 0.32719114, 0.90500927, -0.46879748, 1.082628, -0.095255405)
+transform = Transform3D(-0.9740592, -0.19516389, -0.114539266, -0.016855776, -0.44217628, 0.8967701, -0.2256636, 0.8754376, 0.42741656, -0.33444637, 1.0038404, 0.08029199)
 bone_name = "hand_right"
 bone_idx = 21
 
