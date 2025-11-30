@@ -16,6 +16,6 @@ func _ready() -> void:
 		enemies.add_child(enemy_instance)
 		enemy_instance.global_position = spawns.get_children()[i].global_position
 		enemy_instance.nav_agent.target_position = goals.get_children()[i].global_position
-	await get_tree().create_timer(4.0,false).timeout
+	await get_tree().create_timer(1.0,false).timeout
 	Global.cutscene = false
 	

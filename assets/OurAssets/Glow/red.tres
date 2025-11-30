@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cr57l1yoiscqq"]
+
+[ext_resource type="Shader" uid="uid://doak6api76gyd" path="res://assets/OurAssets/Glow/red.gdshader" id="1_dl0bv"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_dl0bv")
+shader_parameter/glow_color = Color(1, 0, 0, 1)
+shader_parameter/fresnel_power = 1.0
+shader_parameter/pulse_speed = 2.0
