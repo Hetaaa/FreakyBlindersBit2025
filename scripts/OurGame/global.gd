@@ -7,7 +7,7 @@ var player : Player
 var time_freeze :bool = false
 
 var just_unfreezed : bool = false
-
+var cutscene : bool = false
 
 func toggle_freeze():
 	time_freeze = !time_freeze

@@ -1,7 +1,7 @@
 extends CharacterBody3D
 class_name Npc
 
-var SPEED = 3.0
+var SPEED = 2.5
 var can_walk : bool = true
 @onready var nav_agent : NavigationAgent3D = $NavAgent
 
@@ -20,7 +20,7 @@ var is_frozen := false
 var dead : bool = false
 
 var weapon = 0 #0 - pistol/ 1 - shotgun
-
+var spot_meter : int = 0
 func _physics_process(delta: float) -> void:
 	if Global.time_freeze == true:
 		is_frozen = true
@@ -31,7 +31,7 @@ func _physics_process(delta: float) -> void:
 		freeze_factor = lerp(freeze_factor, 0.0, delta * freeze_speed)
 	else:
 		freeze_factor = lerp(freeze_factor, 1.0, delta * freeze_speed)
-
+	spot_meter -=10
 func walk(delta):
 	if freeze_factor <= 0.01:
 		return

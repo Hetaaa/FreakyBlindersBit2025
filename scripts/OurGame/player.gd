@@ -57,7 +57,7 @@ var sliding_window = 0
 var sliding_window_max = 10
 
 #Pierwotne fov
-var base_fov = 90.0
+var base_fov = 70.0
 
 
 #Trzymacz kamery i ona sama
@@ -106,6 +106,10 @@ var current_module : Module
 @onready var pickup_module = $Modules/PickUp
 
 var pocket_item 
+
+var dead : bool = true
+
+@onready var dead_layer = $PPLayer/DeadLayer
 
 func _ready() -> void:
 	Global.player = self
@@ -333,3 +337,10 @@ func pickup(item):
 
 func get_hit(amount):
 	health -= amount
+	if health <= 0.0:
+		die()
+
+func die():
+	movement_block = true
+	mouse_block = true
+	dead_layer.show()

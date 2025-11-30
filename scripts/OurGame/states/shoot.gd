@@ -13,11 +13,15 @@ func PhysicsUpdate(delta: float) -> void:
 		Transitioned.emit(self, "Dead")
 	if npc.freeze_factor <= 0.05:
 		return
+	var direction = npc.global_position.direction_to(Global.player.global_position)
+	var target_rotation = Vector3(0, atan2(direction.x, direction.z), 0)
+	npc.rotate_to_target(target_rotation)
 	if npc.see_player():
 		
-		var direction = npc.global_position.direction_to(Global.player.global_position)
-		var target_rotation = Vector3(0, atan2(direction.x, direction.z), 0)
-		npc.rotate_to_target(target_rotation)
+		
+		
+		if !npc.gun_barrel or Global.cutscene:
+			return
 		npc.gun_barrel.look_at(Global.player.global_position + Vector3(0,1,0), Vector3.UP)
 		if shoot_timer == 0:
 			shoot_timer = 30
@@ -25,7 +29,8 @@ func PhysicsUpdate(delta: float) -> void:
 		else:
 			shoot_timer -=1
 	else:
-		Transitioned.emit(self, "Walk")
+		if !Global.cutscene:
+			Transitioned.emit(self, "Walk")
 
 func shoot():
 	if !Global.time_freeze:
