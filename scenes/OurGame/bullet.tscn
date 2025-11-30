@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://g6fmet060lnm"]
+[gd_scene load_steps=7 format=3 uid="uid://g6fmet060lnm"]
 
 [ext_resource type="Script" uid="uid://b22j4dv1ckkmk" path="res://scripts/OurGame/bullet.gd" id="1_amr1r"]
+[ext_resource type="PackedScene" uid="uid://dc74eymcxx2cq" path="res://assets/OurAssets/Propy/9x19mm.glb" id="2_8wcal"]
+[ext_resource type="PackedScene" uid="uid://caxgj0h2tkjw3" path="res://assets/OurAssets/Glow/highlitablered.tscn" id="3_hsl4k"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_amr1r"]
 albedo_color = Color(1, 1, 0, 1)
@@ -12,14 +14,32 @@ emission_energy_multiplier = 2.62
 material = SubResource("StandardMaterial3D_amr1r")
 size = Vector3(0.05, 0.05, 0.77)
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_hsl4k"]
+height = 0.4864502
+radius = 0.10986328
+
 [node name="Bullet" type="RigidBody3D"]
 gravity_scale = 0.0
 script = ExtResource("1_amr1r")
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("BoxMesh_amr1r")
 
 [node name="Ray" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, -0.5)
 collision_mask = 128
 collide_with_areas = true
+
+[node name="9x19mm" parent="." instance=ExtResource("2_8wcal")]
+transform = Transform3D(1.4, 0, 0, 0, -6.119594e-08, 1.4, 0, -1.4, -6.119594e-08, 0.0060038567, 0, 0.34144053)
+
+[node name="Highlitable" parent="9x19mm/9x19mm_Glock19_002_Cube_001" index="0" instance=ExtResource("3_hsl4k")]
+
+[node name="hurbox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hurbox"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -1.5127171e-09, 0.034606934)
+shape = SubResource("CylinderShape3D_hsl4k")
+
+[editable path="9x19mm"]

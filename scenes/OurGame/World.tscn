@@ -1,11 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://d2ktr1csnv0wm"]
+[gd_scene load_steps=13 format=3 uid="uid://d2ktr1csnv0wm"]
 
 [ext_resource type="Texture2D" uid="uid://0ishtn1wlx5w" path="res://assets/OurAssets/Textures/dev/Green/texture_01.png" id="1_f4s6c"]
 [ext_resource type="PackedScene" uid="uid://rp5hfwm874u3" path="res://scenes/OurGame/Player.tscn" id="1_oyjwk"]
 [ext_resource type="PackedScene" uid="uid://dio2f7phyf0uo" path="res://scenes/OurGame/static_models/glass_bottle.tscn" id="4_vxkh1"]
 [ext_resource type="PackedScene" uid="uid://b02jbk56pyr4b" path="res://scenes/OurGame/enemy.tscn" id="5_f6xgv"]
 [ext_resource type="PackedScene" uid="uid://05w0gk5w0qcy" path="res://assets/OurAssets/Propy/lowpoly_burger.glb" id="5_pev72"]
-[ext_resource type="PackedScene" uid="uid://dadhbfhvcqj16" path="res://assets/OurAssets/Glow/highlitable.tscn" id="6_dl5lw"]
 [ext_resource type="Texture2D" uid="uid://bwkvl24ue6kbw" path="res://assets/OurAssets/Textures/wylezek.png" id="7_slqf3"]
 [ext_resource type="Texture2D" uid="uid://dh6xvqisxn6v8" path="res://assets/OurAssets/Textures/ksiadz.png" id="8_dl5lw"]
 
@@ -73,9 +72,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1972013, -0.16754338, 5.05
 
 [node name="burger" parent="." instance=ExtResource("5_pev72")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34990147, -0.16754362, 5.1559873)
-
-[node name="gasnica" parent="." instance=ExtResource("6_pev72")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.162885, -0.17114252, 4.3128095)
 
 [node name="Decal" type="Decal" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 3.7506943, 1.58673, 0.49368608)

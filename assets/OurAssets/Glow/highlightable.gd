@@ -26,7 +26,7 @@ func _apply_outline(active: bool):
 		# Dzięki temu nie nadpisujemy oryginalnej tekstury obiektu.
 		if parent_visual is MeshInstance3D:
 			parent_visual.material_overlay = outline_material
-			print("oro")
+			print("enem")
 		# Dla 2D (Sprite) zwykle podmienia się material
 		elif parent_visual is Sprite2D:
 			parent_visual.material = outline_material

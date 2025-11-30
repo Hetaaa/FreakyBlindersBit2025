@@ -1,20 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0fq6e4rvk61i"]
+[gd_scene load_steps=2 format=3 uid="uid://b0fq6e4rvk61i"]
 
-[ext_resource type="PackedScene" uid="uid://dc74eymcxx2cq" path="res://assets/OurAssets/Propy/9x19mm.glb" id="1_hxq8d"]
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_mdt6i"]
-height = 0.4864502
-radius = 0.10986328
+[ext_resource type="PackedScene" uid="uid://g6fmet060lnm" path="res://scenes/OurGame/bullet.tscn" id="1_hxq8d"]
 
 [node name="bullet" type="RigidBody3D"]
 
-[node name="9x19mm" parent="." instance=ExtResource("1_hxq8d")]
-transform = Transform3D(1.2, 0, 0, 0, -5.2453668e-08, -1.2, 0, 1.2, -5.2453668e-08, 0.0060038567, 0, -0.12540749)
+[node name="Bullet" parent="." instance=ExtResource("1_hxq8d")]
 
-[node name="hurbox" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="hurbox"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -1.5127171e-09, 0.034606934)
-shape = SubResource("CylinderShape3D_mdt6i")
-
-[editable path="9x19mm"]
+[editable path="Bullet"]

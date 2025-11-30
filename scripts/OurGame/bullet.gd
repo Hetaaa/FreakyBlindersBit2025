@@ -3,7 +3,7 @@ extends SlowableRigidbody
 @onready var mesh = $Mesh
 @onready var ray = $Ray
 
-var bullet_speed = 20.0
+var bullet_speed = 0.0
 
 func _ready() -> void:
 	slowing_val = 0.8
