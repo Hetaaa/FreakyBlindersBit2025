@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://caxgj0h2tkjw3"]
+
+[ext_resource type="Script" uid="uid://bxmqsl2sg2db2" path="res://assets/OurAssets/Glow/highlightable.gd" id="1_vcmsw"]
+[ext_resource type="Material" uid="uid://cr57l1yoiscqq" path="res://assets/OurAssets/Glow/red.tres" id="2_vcmsw"]
+
+[node name="Highlitable" type="Node3D"]
+script = ExtResource("1_vcmsw")
+outline_material = ExtResource("2_vcmsw")

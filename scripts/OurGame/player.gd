@@ -158,6 +158,7 @@ func _physics_process(delta: float) -> void:
 	movement(delta)
 
 	if Input.is_action_just_pressed("freeze_time"):
+		get_tree().call_group("level_manager", "load_level", "res://assets/OurAssets/Maps/Bar/BarScene.tscn")
 		Global.toggle_freeze()
 	_push_away_rigid_bodies()
 	#Potrzebna funkcja by gracz mógł przetwarzać ruch
