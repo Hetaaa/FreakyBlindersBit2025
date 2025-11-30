@@ -1,0 +1,128 @@
+[gd_scene load_steps=11 format=3 uid="uid://4vceobpo2444"]
+
+[ext_resource type="PackedScene" uid="uid://cdcosyddlab4n" path="res://assets/OurAssets/Models/handsDone/handsDone.glb" id="1_sv3v4"]
+[ext_resource type="PackedScene" uid="uid://bsbspc4kyqx5m" path="res://scenes/OurGame/pet.tscn" id="2_53mny"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_53mny"]
+animation = &"throw"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d8t4i"]
+animation = &"take_out"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sv3v4"]
+animation = &"pickup"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_svh7n"]
+animation = &"smoke"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_17jc1"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeTimeSeek" id="AnimationNodeTimeSeek_svh7n"]
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_7gmm7"]
+input_0/name = "idle"
+input_0/auto_advance = false
+input_0/break_loop_at_end = false
+input_0/reset = true
+input_1/name = "throw"
+input_1/auto_advance = false
+input_1/break_loop_at_end = false
+input_1/reset = true
+input_2/name = "takeout"
+input_2/auto_advance = false
+input_2/break_loop_at_end = false
+input_2/reset = true
+input_3/name = "pickup"
+input_3/auto_advance = false
+input_3/break_loop_at_end = false
+input_3/reset = true
+input_4/name = "smoke"
+input_4/auto_advance = false
+input_4/break_loop_at_end = false
+input_4/reset = true
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_8qltl"]
+graph_offset = Vector2(-355.8679, 42.54329)
+nodes/output/position = Vector2(980, 20)
+nodes/Transition/node = SubResource("AnimationNodeTransition_7gmm7")
+nodes/Transition/position = Vector2(540, 20)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_17jc1")
+nodes/Animation/position = Vector2(40, -60)
+nodes/TimeSeek/node = SubResource("AnimationNodeTimeSeek_svh7n")
+nodes/TimeSeek/position = Vector2(780, 0)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_53mny")
+"nodes/Animation 2/position" = Vector2(0, 100)
+"nodes/Animation 3/node" = SubResource("AnimationNodeAnimation_d8t4i")
+"nodes/Animation 3/position" = Vector2(60, 260)
+"nodes/Animation 4/node" = SubResource("AnimationNodeAnimation_sv3v4")
+"nodes/Animation 4/position" = Vector2(220, 300)
+"nodes/Animation 5/node" = SubResource("AnimationNodeAnimation_svh7n")
+"nodes/Animation 5/position" = Vector2(380, 300)
+node_connections = [&"output", 0, &"TimeSeek", &"Transition", 0, &"Animation", &"Transition", 1, &"Animation 2", &"Transition", 2, &"Animation 3", &"Transition", 3, &"Animation 4", &"Transition", 4, &"Animation 5", &"TimeSeek", 0, &"Transition"]
+
+[node name="Fpc" type="Node3D"]
+
+[node name="handsDone" parent="." instance=ExtResource("1_sv3v4")]
+
+[node name="Skeleton3D" parent="handsDone/ArmRig" index="0"]
+bones/1/position = Vector3(0.20851925, 0.0035165048, 0.21727966)
+bones/1/rotation = Quaternion(-0.20987257, 0.5608068, -0.64478344, 0.47508267)
+bones/2/rotation = Quaternion(0.050862182, 0.18011801, -0.0654097, 0.98014903)
+bones/18/position = Vector3(-0.21402399, -0.0032328805, 0.16788526)
+bones/18/rotation = Quaternion(0.16858494, 0.36385664, -0.90242845, -0.15751326)
+bones/19/rotation = Quaternion(0.30029118, -0.15387754, 0.43100965, 0.83688563)
+bones/20/position = Vector3(0.027158776, 0.2850362, -0.0064758616)
+bones/20/rotation = Quaternion(0.09964131, -0.61377907, -0.33600914, 0.7074211)
+bones/21/position = Vector3(-0.014245645, 0.059452374, 0.0117039895)
+bones/21/rotation = Quaternion(0.19337812, -0.691283, 0.26407555, 0.64420253)
+bones/22/position = Vector3(-6.631695e-09, 0.05602693, -1.9147882e-07)
+bones/22/rotation = Quaternion(0.30187112, -0.021439737, 0.061141685, 0.9511446)
+bones/23/position = Vector3(0.003786796, 0.03505383, -0.010447505)
+bones/23/rotation = Quaternion(-0.076865986, 0.00188365, 0.17013736, 0.9824161)
+bones/24/position = Vector3(0.015243819, 0.009777231, 0.018165028)
+bones/24/rotation = Quaternion(0.34056747, 0.04578894, -0.2972097, 0.890833)
+bones/25/rotation = Quaternion(-1.9073486e-06, -1.7299318e-06, 1.818408e-07, 1)
+bones/26/position = Vector3(0.006142698, -0.014730933, 0.015091676)
+bones/26/rotation = Quaternion(-0.009436457, -0.97801864, -0.20272651, -0.0478808)
+bones/27/rotation = Quaternion(0.1529153, -0.32742444, -0.011959514, 0.93234503)
+bones/30/position = Vector3(0.01798626, 0.008503597, -0.014993303)
+bones/30/rotation = Quaternion(0.033153694, -0.6235132, 0.27103162, 0.73258036)
+bones/31/rotation = Quaternion(0.46165454, -0.061922725, 0.03619091, 0.88415545)
+bones/32/rotation = Quaternion(0.55855095, 0.013978316, 0.009883211, 0.82929355)
+bones/33/rotation = Quaternion(0.0069025843, 0.009565088, -0.003310022, 0.99992496)
+bones/35/position = Vector3(0.34102082, 0.3399511, -0.4287358)
+bones/36/position = Vector3(-0.4109208, 0.36471123, -0.15113667)
+bones/37/position = Vector3(0.42291227, 0.09741899, -0.008150272)
+bones/37/rotation = Quaternion(-0.16268356, 0.6881381, 0.68813825, -0.16268358)
+bones/38/position = Vector3(-0.13944644, 0.3764029, 0.43895063)
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="handsDone/ArmRig/Skeleton3D" index="2"]
+transform = Transform3D(-0.49402702, -0.041468747, 0.8684572, 0.7246393, 0.53232855, 0.43763405, -0.4804527, 0.8455213, -0.23293462, -0.14434394, 0.3673406, 0.4808061)
+bone_name = "hand.R"
+bone_idx = 20
+
+[node name="ItemHolder" type="Node3D" parent="handsDone/ArmRig/Skeleton3D/BoneAttachment3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -0.05719237, 0.051689327, 0.0036338717)
+
+[node name="BoneAttachment3D2" type="BoneAttachment3D" parent="handsDone/ArmRig/Skeleton3D" index="3"]
+transform = Transform3D(-0.8898838, 0.30595613, 0.33837563, 0.3105298, -0.1371072, 0.9406234, 0.3341829, 0.9421213, 0.027000993, -0.10732621, 0.36494273, 0.5547961)
+bone_name = "thumb.02.R"
+bone_idx = 27
+
+[node name="Szlug" type="Node3D" parent="handsDone/ArmRig/Skeleton3D/BoneAttachment3D2"]
+transform = Transform3D(0.46039528, 0.82611585, 0.3249124, -0.8214188, 0.25766516, 0.50880146, 0.33661044, -0.5011393, 0.79721475, 0.00036634505, 0.02056896, 0.020934157)
+
+[node name="pet" parent="handsDone/ArmRig/Skeleton3D/BoneAttachment3D2/Szlug" instance=ExtResource("2_53mny")]
+transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0, 0, 0)
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("../handsDone")
+tree_root = SubResource("AnimationNodeBlendTree_8qltl")
+anim_player = NodePath("../handsDone/AnimationPlayer")
+parameters/Transition/current_state = "smoke"
+parameters/Transition/transition_request = ""
+parameters/Transition/current_index = 4
+parameters/TimeSeek/seek_request = -1.0
+
+[editable path="handsDone"]

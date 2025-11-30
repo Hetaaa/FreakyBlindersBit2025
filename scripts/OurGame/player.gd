@@ -110,6 +110,12 @@ var pocket_item
 var dead : bool = true
 
 @onready var dead_layer = $PPLayer/DeadLayer
+@onready var anim_tree = $FpcLayer/SubViewportContainer/SubViewport/Camera3D/Fpc/AnimationTree
+
+@onready var item_holder = $FpcLayer/SubViewportContainer/SubViewport/Camera3D/Fpc/handsDone/ArmRig/Skeleton3D/BoneAttachment3D/ItemHolder
+@onready var cig_mesh = $FpcLayer/SubViewportContainer/SubViewport/Camera3D/Fpc/handsDone/ArmRig/Skeleton3D/BoneAttachment3D2/Szlug/pet
+
+var cig_sp
 
 func _ready() -> void:
 	Global.player = self
@@ -135,7 +141,8 @@ func _input(event: InputEvent) -> void:
 
 #Uruchamia się 60 razy na sekundę
 func _physics_process(delta: float) -> void:
-	
+	if cig_sp:
+		print(cig_sp.global_position)
 	#Aktualizacja stanu gracza
 	updatePlayerState()
 	#Aktualizacja kiwania kamerą
@@ -234,6 +241,7 @@ func movement(delta):
 		eyes.position.x = lerp(eyes.position.x, 0.0, delta*10.0)
 
 func updatePlayerState() -> void:
+	
 	moving = (input_dir != Vector2.ZERO)
 	if not is_on_floor():
 		player_state = PlayerState.AIR
@@ -251,9 +259,10 @@ func updatePlayerState() -> void:
 				player_state = PlayerState.SPRINTING
 			else:
 				player_state = PlayerState.WALKING
-				
+	
 	updatePlayerSpeed(player_state)
-	updatePlayerColShape(player_state)
+	if !movement_block:
+		updatePlayerColShape(player_state)
 	
 
 func updatePlayerColShape(_player_state : PlayerState) -> void:
@@ -334,6 +343,7 @@ func changeModule(module : Module):
 
 func pickup(item):
 	pocket_item = item
+	
 	changeModule(throwing_module)
 
 func get_hit(amount):
@@ -345,3 +355,8 @@ func die():
 	movement_block = true
 	mouse_block = true
 	dead_layer.show()
+
+func change_animation(anim):
+	if anim_tree:
+		anim_tree.set("parameters/Transition/transition_request", anim)
+		anim_tree.set("parameters/TimeSeek/seek_request", 0.0)

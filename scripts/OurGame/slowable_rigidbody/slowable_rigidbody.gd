@@ -16,14 +16,16 @@ func PhysicsUpdate(delta):
 func _physics_process(delta):
 	if freeze_timer>0:
 		freeze_timer -= 1
-	if Global.time_freeze and freeze_timer>0:
+	if Global.time_freeze:
 		if !saved_dir:
 			saved_dir = true
 			
 			saved_velocity = linear_velocity
 			saved_angular = angular_velocity
-
-		soft_freeze()
+		if freeze_timer> 0:
+			soft_freeze()
+		else:
+			hard_freeze()
 	else:
 		if Global.just_unfreezed and !unfreezed:
 			unfreezed = true

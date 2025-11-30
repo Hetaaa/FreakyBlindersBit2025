@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ba1tc1tv5uf8m"]
+
+[ext_resource type="PackedScene" uid="uid://cdp2b87nr5ukn" path="res://assets/OurAssets/Models/pet.glb" id="1_bbqym"]
+
+[node name="petvis1" instance=ExtResource("1_bbqym")]
+transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, 0, 0)
