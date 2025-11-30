@@ -89,6 +89,7 @@ func _on_hitbox_body_entered(body: Node3D) -> void:
 			if body.linear_velocity.length() > 1.0:
 				dead = true
 		
+		
 
 func change_animation(anim):
 	if anim_tree:
@@ -98,3 +99,9 @@ func change_animation(anim):
 func weapon_pick():
 	if weapon == 0:
 		pass
+func play_shoot():
+	$GunSound.play()
+func play_dead():
+	if !$HitSound.playing and !$CrashSound.playing:
+		$HitSound.play()
+		$CrashSound.play()

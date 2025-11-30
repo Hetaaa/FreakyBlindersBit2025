@@ -100,7 +100,7 @@ var mouse_block : bool = false
 var camera_update_block : bool = false
 var movement_block : bool = false
 
-var health : int = 100
+var health : int = 500
 
 @onready var throw_point = $Head/Eyes/Camera3D/ThrowPoint
 @onready var modules = $Modules
@@ -131,6 +131,16 @@ var dead : bool = true
 @onready var hand_icon = $HudLayer/HandIcon
 @onready var stoptime: AnimationPlayer = $Head/Eyes/Camera3D/stoptime
 
+@onready var sound_pick = $SoundPick
+
+@onready var sound_death = $SoundDeath
+
+var glass_pick = preload("res://assets/OurAssets/sounds/glass_pick.wav")
+var burger_pick = preload("res://assets/OurAssets/sounds/burger_hit.wav")
+var gasnica_pick = preload("res://assets/OurAssets/sounds/gasnica_pick.wav")
+
+@onready var subviewport = $FpcLayer/SubViewportContainer/SubViewport
+
 func _ready() -> void:
 	Global.player = self
 	Global.anihandler.connect(on_ani_change)
@@ -138,6 +148,8 @@ func _ready() -> void:
 	#Ustawiamy by myszką była zablokowana i można by było się obracać w 3D
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	camera.current = true
+	get_viewport().connect("size_changed", Callable(self, "_on_window_resized"))
+	_on_window_resized() 
 
 
 
@@ -373,20 +385,25 @@ func show_my_throwable():
 	if nam.contains("butelka"):
 		bottle_hand.show()
 		change_animation("takeout")
+		play_pick(glass_pick)
 
 	elif nam.contains("frytki"):
 		frytki_hand.show()
 		change_animation("takeout")
+		play_pick(burger_pick)
 
 	elif nam.contains("gasnica"):
 		gasnica_hand.show()
+		play_pick(gasnica_pick)
 
 	elif nam.contains("kosz"):
 		kosz_hand.show()
+		play_pick(gasnica_pick)
 
 	elif nam.contains("burger"):
 		burger_hand.show()
 		change_animation("takeout")
+		play_pick(burger_pick)
 func hide_all_throwables():
 	bottle_hand.hide()
 	burger_hand.hide()
@@ -404,9 +421,17 @@ func die():
 	mouse_block = true
 	player_dead.emit()
 	dead_layer.show()
+	sound_death.play()
 
 func change_animation(anim):
 	if anim_tree:
 		anim_tree.set("parameters/Transition/transition_request", anim)
 		anim_tree.set("parameters/TimeSeek/seek_request", 0.0)
 	
+func play_pick(stream):
+	
+	sound_pick.stream = stream
+	sound_pick.play()
+func _on_window_resized():
+	var window_size = get_viewport().get_visible_rect().size
+	subviewport.size = window_size

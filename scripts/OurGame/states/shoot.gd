@@ -34,7 +34,7 @@ func PhysicsUpdate(delta: float) -> void:
 
 func shoot():
 	if !Global.time_freeze:
-		
+		npc.play_shoot()
 		var instance = barrel_scene.instantiate()
 		# ustaw transform lufy zanim dodasz (ładniej, ale nie obowiązkowe jeśli przekazujesz direction)
 		instance.global_transform = npc.gun_barrel.global_transform
