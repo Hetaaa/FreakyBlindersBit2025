@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://76vb54xaugo8"]
+[gd_scene load_steps=29 format=3 uid="uid://76vb54xaugo8"]
 
 [ext_resource type="Script" uid="uid://w75c58rry1hb" path="res://scripts/level_spawn.gd" id="1_ewqoi"]
 [ext_resource type="PackedScene" uid="uid://2hmonl0xsft5" path="res://assets/OurAssets/Maps/Bar/Model/bar.glb" id="1_msp8k"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bnk5dyqqtwmcs" path="res://scenes/gasnica_throwable.tscn" id="6_mxlp2"]
 [ext_resource type="PackedScene" uid="uid://cybk1wmt5x6mp" path="res://scenes/kosz_throwable.tscn" id="7_g782n"]
 [ext_resource type="PackedScene" uid="uid://slumbrq7081a" path="res://scenes/freezetimer.tscn" id="8_g782n"]
+[ext_resource type="AudioStream" uid="uid://bnff5xo7cgtp1" path="res://assets/OurAssets/sounds/indoors_amb.wav" id="9_d5p4y"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ls4xn"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -384,6 +385,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4609404, 0, -19.242893)
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7.741731, 0.020810783, -23.757067)
 
 [node name="Freezetimer" parent="." instance=ExtResource("8_g782n")]
+
+[node name="Ambience" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20.45937)
+stream = ExtResource("9_d5p4y")
+volume_db = -27.407
+unit_size = 56.25
+max_db = -7.972
+autoplay = true
 
 [connection signal="player_dead" from="Player" to="." method="_on_player_player_dead"]
 
