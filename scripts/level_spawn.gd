@@ -11,6 +11,8 @@ var dead_enemies_count = 0 # Licznik
 @export var required_kills = 2    # Cel
 
 signal level_won_and_changed(level_path : String)
+signal level_lost
+
 
 func _on_enemy_died():
 	dead_enemies_count += 1
@@ -33,4 +35,10 @@ func _ready() -> void:
 		enemy_instance.nav_agent.target_position = goals.get_children()[i].global_position
 	await get_tree().create_timer(1.0,false).timeout
 	Global.cutscene = false
+	
+
+
+func _on_player_player_dead() -> void:
+	level_lost.emit()
+	self.process_mode = Node.PROCESS_MODE_DISABLED
 	

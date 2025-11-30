@@ -15,7 +15,7 @@ func _on_main_menu_button_pressed():
 	%MainMenuConfirmation.show()
 
 func _on_close_button_pressed():
-	restart_pressed.emit()
+	SceneLoader.reload_current_scene()
 	close()
 
 func _on_main_menu_confirmation_confirmed():

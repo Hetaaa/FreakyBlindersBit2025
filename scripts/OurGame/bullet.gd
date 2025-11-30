@@ -16,7 +16,7 @@ func _ready() -> void:
 func PhysicsUpdate(_delta):
 	if ray.is_colliding():
 		if ray.get_collider().has_method("get_hit"):
-			ray.get_collider().get_hit(10)
+			ray.get_collider().get_hit(1000)
 		#Tu dodać particle
 
 func launch(direction: Vector3, initial_speed: float = -1.0) -> void:

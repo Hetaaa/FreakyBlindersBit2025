@@ -504,4 +504,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4822774, 3.074234, 6.95973
 [node name="Unfreeze" parent="Freezetimer" index="1"]
 wait_time = 20.0
 
+[connection signal="player_dead" from="Player" to="." method="_on_player_player_dead"]
+
 [editable path="Freezetimer"]
