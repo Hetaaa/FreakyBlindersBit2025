@@ -1,7 +1,7 @@
 extends CharacterBody3D
 class_name Npc
 
-var SPEED = 3.0
+var SPEED = 2.5
 var can_walk : bool = true
 @onready var nav_agent : NavigationAgent3D = $NavAgent
 
@@ -69,10 +69,7 @@ func see_player():
 	if player_seek_ray.is_colliding():
 		var col = player_seek_ray.get_collider()
 		if col.is_in_group("player"):
-			spot_meter += 30
-			if spot_meter > 100:
-				if spot_meter >= 100:
-					return true
+			return true
 	return false
 
 

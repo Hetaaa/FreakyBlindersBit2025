@@ -57,7 +57,7 @@ var sliding_window = 0
 var sliding_window_max = 10
 
 #Pierwotne fov
-var base_fov = 90.0
+var base_fov = 70.0
 
 
 #Trzymacz kamery i ona sama

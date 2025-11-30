@@ -3,7 +3,7 @@ extends SlowableRigidbody
 @onready var mesh = $Mesh
 @onready var ray = $Ray
 
-
+var bullet_speed = 20.0
 
 func _ready() -> void:
 	slowing_val = 0.8
@@ -21,7 +21,7 @@ func PhysicsUpdate(_delta):
 
 func launch(direction: Vector3, initial_speed: float = -1.0) -> void:
 	if initial_speed > 0:
-		speed = initial_speed
-	var v = direction.normalized() * speed
+		bullet_speed = initial_speed
+	var v = direction.normalized() * bullet_speed
 	linear_velocity = v             # natychmiastowa prędkość (najprostsze)
 	# albo: apply_central_impulse(v)  # jeśli wolisz jednorazowy impuls
