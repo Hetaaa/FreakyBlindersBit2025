@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://w75c58rry1hb" path="res://scripts/level_spawn.gd" id="1_ewqoi"]
 [ext_resource type="PackedScene" uid="uid://2hmonl0xsft5" path="res://assets/OurAssets/Maps/Bar/Model/bar.glb" id="1_msp8k"]
+[ext_resource type="Script" uid="uid://38861yhomcqx" path="res://assets/OurAssets/Maps/Bar/bar_scene.gd" id="1_mxlp2"]
 [ext_resource type="PackedScene" uid="uid://rp5hfwm874u3" path="res://scenes/OurGame/Player.tscn" id="2_ls4xn"]
 [ext_resource type="Texture2D" uid="uid://bwkvl24ue6kbw" path="res://assets/OurAssets/Textures/wylezek.png" id="4_ewqoi"]
 [ext_resource type="PackedScene" uid="uid://d06ty270oingn" path="res://scenes/butelka_throwable.tscn" id="4_o5y6v"]
