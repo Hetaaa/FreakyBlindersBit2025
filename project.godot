@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="NAZWA"
+config/name="Smoke Break"
 run/main_scene="uid://dhr7kwfkmlq7o"
 config/features=PackedStringArray("4.5")
 config/icon="res://icon.png"
@@ -38,6 +38,7 @@ player=""
 level_manager=""
 enemies=""
 mesh=""
+time_display=""
 
 [gui]
 

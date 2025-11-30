@@ -1,18 +1,162 @@
-[gd_scene load_steps=13 format=3 uid="uid://rp5hfwm874u3"]
+[gd_scene load_steps=23 format=3 uid="uid://rp5hfwm874u3"]
 
 [ext_resource type="Script" uid="uid://cjsm80hf70kc7" path="res://scripts/OurGame/player.gd" id="1_8arhe"]
 [ext_resource type="Script" uid="uid://dternnnmavtke" path="res://scripts/player/hitbox.gd" id="2_xyhs7"]
+[ext_resource type="Texture2D" uid="uid://bpkoqttyhrrq8" path="res://assets/OurAssets/noise/7-noise-texture-overlays-1.png" id="2_yrqlq"]
 [ext_resource type="Script" uid="uid://dknvsvr0u002a" path="res://scripts/OurGame/player/modules.gd" id="3_88cnv"]
+[ext_resource type="Texture2D" uid="uid://duxcc4s1xei72" path="res://assets/OurAssets/noise/7-noise-texture-overlays-3.png" id="3_yrqlq"]
 [ext_resource type="Script" uid="uid://yj2nw7wg1m6v" path="res://scripts/OurGame/modules/throwing_module.gd" id="4_g6t73"]
+[ext_resource type="Texture2D" uid="uid://boer2nuu50dn" path="res://assets/OurAssets/noise/7-noise-texture-overlays-4.png" id="4_visxa"]
 [ext_resource type="Script" uid="uid://cy18kvgidm2mg" path="res://scripts/OurGame/modules/pick_up_module.gd" id="5_g6t73"]
+[ext_resource type="Texture2D" uid="uid://bsbktvqsdkmx" path="res://assets/OurAssets/noise/7-noise-texture-overlays-6.png" id="5_xrxs6"]
+[ext_resource type="Texture2D" uid="uid://bj4epsc5dvfhd" path="res://assets/OurAssets/noise/7-noise-texture-overlays-5.png" id="6_bfciw"]
 [ext_resource type="Shader" uid="uid://boswve8ohnxcp" path="res://assets/OurAssets/shaders/ppps1.gdshader" id="6_epjuq"]
 [ext_resource type="Script" uid="uid://d2mehkfqejsu" path="res://scripts/player/cig_module.gd" id="6_jy12i"]
+[ext_resource type="Texture2D" uid="uid://bk1kuj67iexfp" path="res://assets/OurAssets/Textures/dev/Light/texture_04.png" id="7_bfciw"]
 [ext_resource type="PackedScene" uid="uid://4vceobpo2444" path="res://scenes/OurGame/fpc.tscn" id="7_02c80"]
 [ext_resource type="Texture2D" uid="uid://bgjjifjr8j033" path="res://assets/OurAssets/Textures/hand_grab.png" id="9_galn3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v7t4x"]
 radius = 0.4267578
 height = 1.8
+
+[sub_resource type="Animation" id="Animation_pcot0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_yrqlq")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.27999997, 0.39999986, 1, 0.2901961)]
+}
+
+[sub_resource type="Animation" id="Animation_bfciw"]
+resource_name = "stoptime"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.00433979, 1.4666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.05249999, 0.27066666, 0.35, 0.67058825), Color(0.4453, 0.677805, 0.73, 0), Color(0.14400001, 0.4, 0.3786666, 0.46666667)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect2:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.008333334, 1.4666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.08839999, 0.26, 0.19994001, 0), Color(0.33620244, 0.44188982, 0.9412189, 0.8666667)]
+}
+
+[sub_resource type="Animation" id="Animation_ksfr3"]
+resource_name = "noise"
+length = 0.16
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0066666603, 0.033333335, 0.06666667, 0.1, 0.13333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_yrqlq"), ExtResource("3_yrqlq"), ExtResource("4_visxa"), ExtResource("5_xrxs6"), ExtResource("6_bfciw")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.13333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.27999997, 0.39999986, 1, 0.78431374), Color(0.27999997, 0.39999986, 1, 0.78431374)]
+}
+
+[sub_resource type="Animation" id="Animation_xrxs6"]
+resource_name = "noise"
+length = 0.16
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0066666603, 0.033333335, 0.06666667, 0.1, 0.13333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_yrqlq"), ExtResource("3_yrqlq"), ExtResource("4_visxa"), ExtResource("5_xrxs6"), ExtResource("6_bfciw")]
+}
+
+[sub_resource type="Animation" id="Animation_visxa"]
+resource_name = "stoptime"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.14400001, 0.4, 0.3786666, 0.46666667), Color(0.4453, 0.677805, 0.73, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect2:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.4666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.33620244, 0.44188982, 0.9412189, 0.8666667), Color(0.08839999, 0.26, 0.19994001, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4fo85"]
+_data = {
+&"RESET": SubResource("Animation_pcot0"),
+&"endstoptime": SubResource("Animation_visxa"),
+&"noise": SubResource("Animation_xrxs6"),
+&"stopnoise": SubResource("Animation_ksfr3"),
+&"stoptime": SubResource("Animation_bfciw")
+}
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8arhe"]
 size = Vector3(0.8186035, 1.8088989, 0.9025879)
@@ -53,6 +197,42 @@ collide_with_areas = true
 
 [node name="ThrowPoint" type="Node3D" parent="Head/Eyes/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.65937436)
+
+[node name="TextureRect" type="TextureRect" parent="Head/Eyes/Camera3D"]
+modulate = Color(0.27999997, 0.39999986, 1, 0.2901961)
+self_modulate = Color(0.2535242, 0.38617358, 1, 0.39607844)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+texture = ExtResource("2_yrqlq")
+expand_mode = 1
+
+[node name="noise" type="AnimationPlayer" parent="Head/Eyes/Camera3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_4fo85")
+}
+autoplay = "noise"
+
+[node name="stoptime" type="AnimationPlayer" parent="Head/Eyes/Camera3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_4fo85")
+}
+
+[node name="TextureRect2" type="TextureRect" parent="Head/Eyes/Camera3D"]
+modulate = Color(0.05249999, 0.27066666, 0.35, 0.67058825)
+self_modulate = Color(0.08839999, 0.26, 0.19994001, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+texture = ExtResource("7_bfciw")
+expand_mode = 1
 
 [node name="StandUpCheck" type="RayCast3D" parent="Head"]
 target_position = Vector3(0, 0.39, 0)

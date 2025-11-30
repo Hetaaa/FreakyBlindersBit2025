@@ -29,6 +29,7 @@ func _physics_process(delta: float) -> void:
 	if Global.time_freeze == true:
 		is_frozen = true
 	else:
+		
 		is_frozen = false
 	
 	if is_frozen:

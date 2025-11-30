@@ -6,6 +6,7 @@ var saved_angular = Vector3.ZERO
 var unfreezed : bool =false
 var freeze_timer = 0
 @export var speed = 40.0
+@onready var stoptime: AnimationPlayer = $Head/Eyes/Camera3D/stoptime
 
 var slowing_val : float = 0.9
 

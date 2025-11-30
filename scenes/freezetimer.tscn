@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://slumbrq7081a"]
+[gd_scene load_steps=4 format=3 uid="uid://slumbrq7081a"]
 
 [ext_resource type="Script" uid="uid://daxdafx7r5vdi" path="res://scenes/OurGame/GameManager/freezetimer.gd" id="1_y0aop"]
+[ext_resource type="Script" uid="uid://besyk2o3ncgy2" path="res://scenes/freeze_timer.gd" id="2_4bqfr"]
+[ext_resource type="Script" uid="uid://dswj5jllxhmqp" path="res://scenes/unfreeze.gd" id="2_p1vaf"]
 
 [node name="Freezetimer" type="Node3D"]
 script = ExtResource("1_y0aop")
@@ -9,11 +11,13 @@ script = ExtResource("1_y0aop")
 wait_time = 3.4
 one_shot = true
 autostart = true
+script = ExtResource("2_4bqfr")
 
 [node name="Unfreeze" type="Timer" parent="."]
 wait_time = 14.0
 one_shot = true
 autostart = true
+script = ExtResource("2_p1vaf")
 
 [connection signal="timeout" from="FreezeTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Unfreeze" to="." method="_on_unfreeze_timeout"]

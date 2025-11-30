@@ -385,4 +385,6 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7.7
 
 [node name="Freezetimer" parent="." instance=ExtResource("8_g782n")]
 
+[connection signal="player_dead" from="Player" to="." method="_on_player_player_dead"]
+
 [editable path="Freezetimer"]
