@@ -16,16 +16,13 @@ func PhysicsUpdate(delta):
 func _physics_process(delta):
 	if freeze_timer>0:
 		freeze_timer -= 1
-	if Global.time_freeze:
+	if Global.time_freeze and freeze_timer> 0:
 		if !saved_dir:
 			saved_dir = true
 			
 			saved_velocity = linear_velocity
 			saved_angular = angular_velocity
-		if freeze_timer> 0:
-			soft_freeze()
-		else:
-			hard_freeze()
+		soft_freeze()
 	else:
 		if Global.just_unfreezed and !unfreezed:
 			unfreezed = true
@@ -40,7 +37,7 @@ func soft_freeze():
 	# spowalnia stopniowo
 	linear_velocity *= slowing_val
 	angular_velocity *= slowing_val
-	#print("soft_freeze")
+	print("soft_freeze", freeze)
 	if linear_velocity.length() < 0.05:
 		hard_freeze()
 

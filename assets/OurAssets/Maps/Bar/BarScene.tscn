@@ -267,6 +267,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.056203485, 3.5762787e-07, -
 
 [node name="OmniLight3D7" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5257789, 3.6980486, -32.596306)
+layers = 3
 light_color = Color(0.99999994, 0.63250697, 0.3685957, 1)
 light_size = 0.133
 shadow_enabled = true
@@ -274,6 +275,7 @@ omni_range = 4.372
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7159212, 2.5734482, -23.823856)
+layers = 3
 light_color = Color(0.9999998, 0.6052469, 0.31224838, 1)
 light_size = 0.133
 shadow_enabled = true
@@ -281,6 +283,7 @@ omni_range = 10.2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7159212, 2.5734482, -18.932886)
+layers = 3
 light_color = Color(1, 0.8306089, 0.7224455, 1)
 light_size = 0.133
 shadow_enabled = true
@@ -288,6 +291,7 @@ omni_range = 10.2
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7159212, 2.5734482, -21.334581)
+layers = 3
 light_color = Color(1, 0.8306089, 0.7224455, 1)
 light_size = 0.133
 shadow_enabled = true
@@ -295,6 +299,7 @@ omni_range = 10.2
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3373, 3.8819833, -21.912477)
+layers = 3
 light_color = Color(1, 0.6039216, 0.3137255, 1)
 light_size = 0.133
 shadow_enabled = true
@@ -302,6 +307,7 @@ omni_range = 1.669
 
 [node name="OmniLight3D5" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4099455, 3.1714783, -18.029007)
+layers = 3
 light_color = Color(0.94103384, 0.851635, 0.7805364, 1)
 light_size = 0.133
 shadow_enabled = true
@@ -310,6 +316,7 @@ omni_attenuation = -0.619
 
 [node name="OmniLight3D6" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4099455, 3.1714783, -14.424471)
+layers = 3
 light_color = Color(0.94103384, 0.851635, 0.7805364, 1)
 light_size = 0.133
 shadow_enabled = true
@@ -318,6 +325,7 @@ omni_attenuation = -0.619
 
 [node name="OmniLight3D8" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2873664, 2.8009515, -33.27709)
+layers = 3
 light_color = Color(0.48752677, 0.79155636, 0.82357323, 1)
 light_size = 0.133
 shadow_enabled = true
@@ -326,6 +334,7 @@ omni_attenuation = 2.238
 
 [node name="OmniLight3D9" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7159212, 4.3508973, -39.71372)
+layers = 3
 light_color = Color(0.9993506, 0.86370057, 0.29126018, 1)
 light_volumetric_fog_energy = 2.371
 light_size = 0.133

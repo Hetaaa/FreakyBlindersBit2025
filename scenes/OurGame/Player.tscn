@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://rp5hfwm874u3"]
+[gd_scene load_steps=13 format=3 uid="uid://rp5hfwm874u3"]
 
 [ext_resource type="Script" uid="uid://cjsm80hf70kc7" path="res://scripts/OurGame/player.gd" id="1_8arhe"]
 [ext_resource type="Script" uid="uid://dternnnmavtke" path="res://scripts/player/hitbox.gd" id="2_xyhs7"]
@@ -8,6 +8,7 @@
 [ext_resource type="Shader" uid="uid://boswve8ohnxcp" path="res://assets/OurAssets/shaders/ppps1.gdshader" id="6_epjuq"]
 [ext_resource type="Script" uid="uid://d2mehkfqejsu" path="res://scripts/player/cig_module.gd" id="6_jy12i"]
 [ext_resource type="PackedScene" uid="uid://4vceobpo2444" path="res://scenes/OurGame/fpc.tscn" id="7_02c80"]
+[ext_resource type="Texture2D" uid="uid://bgjjifjr8j033" path="res://assets/OurAssets/Textures/hand_grab.png" id="9_galn3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v7t4x"]
 radius = 0.4267578
@@ -42,6 +43,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 [node name="Eyes" type="Node3D" parent="Head"]
 
 [node name="Camera3D" type="Camera3D" parent="Head/Eyes"]
+cull_mask = 1048573
 current = true
 
 [node name="VisRay" type="RayCast3D" parent="Head/Eyes/Camera3D"]
@@ -67,7 +69,7 @@ shape = SubResource("BoxShape3D_8arhe")
 [node name="Modules" type="Node" parent="." node_paths=PackedStringArray("player", "initial_module")]
 script = ExtResource("3_88cnv")
 player = NodePath("..")
-initial_module = NodePath("PickUp")
+initial_module = NodePath("Cig")
 
 [node name="Throwing" type="Node" parent="Modules"]
 script = ExtResource("4_g6t73")
@@ -123,11 +125,62 @@ fov = 41.1
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.088323295, -0.29276562, -0.27463177)
 
 [node name="Arm" parent="FpcLayer/SubViewportContainer/SubViewport/Camera3D/Fpc/handsDone/ArmRig/Skeleton3D" index="0"]
-visible = false
 layers = 2
 
-[node name="Arm_001" parent="FpcLayer/SubViewportContainer/SubViewport/Camera3D/Fpc/handsDone/ArmRig/Skeleton3D" index="1"]
+[node name="bottle" parent="FpcLayer/SubViewportContainer/SubViewport/Camera3D/Fpc/handsDone/ArmRig/Skeleton3D/BoneAttachment3D/ItemHolder" index="0"]
 layers = 2
+
+[node name="burger" parent="FpcLayer/SubViewportContainer/SubViewport/Camera3D/Fpc/handsDone/ArmRig/Skeleton3D/BoneAttachment3D/ItemHolder" index="1"]
+layers = 2
+
+[node name="fryty" parent="FpcLayer/SubViewportContainer/SubViewport/Camera3D/Fpc/handsDone/ArmRig/Skeleton3D/BoneAttachment3D/ItemHolder" index="2"]
+layers = 2
+
+[node name="Object_3" parent="FpcLayer/SubViewportContainer/SubViewport/Camera3D/Fpc/handsDone/ArmRig/Skeleton3D/BoneAttachment3D/ItemHolder/fryty" index="0"]
+layers = 2
+
+[node name="Object_6" parent="FpcLayer/SubViewportContainer/SubViewport/Camera3D/Fpc/handsDone/BigItemHolder/gasnica/root_5/tank_0" index="0"]
+layers = 2
+
+[node name="Object_8" parent="FpcLayer/SubViewportContainer/SubViewport/Camera3D/Fpc/handsDone/BigItemHolder/gasnica/root_5/valve assembly_1" index="0"]
+layers = 2
+
+[node name="Object_10" parent="FpcLayer/SubViewportContainer/SubViewport/Camera3D/Fpc/handsDone/BigItemHolder/gasnica/root_5/handle_2" index="0"]
+layers = 2
+
+[node name="Object_12" parent="FpcLayer/SubViewportContainer/SubViewport/Camera3D/Fpc/handsDone/BigItemHolder/gasnica/root_5/release lever_3" index="0"]
+layers = 2
+
+[node name="Object_14" parent="FpcLayer/SubViewportContainer/SubViewport/Camera3D/Fpc/handsDone/BigItemHolder/gasnica/root_5/hose_4" index="0"]
+layers = 2
+
+[node name="kosz" parent="FpcLayer/SubViewportContainer/SubViewport/Camera3D/Fpc/handsDone/BigItemHolder" index="1"]
+layers = 2
+
+[node name="HudLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Hud_holder" type="Control" parent="HudLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HandIcon" type="TextureRect" parent="HudLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_galn3")
 
 [editable path="FpcLayer/SubViewportContainer/SubViewport/Camera3D/Fpc"]
 [editable path="FpcLayer/SubViewportContainer/SubViewport/Camera3D/Fpc/handsDone"]

@@ -10,7 +10,7 @@
 height = 2.097412
 radius = 0.6166992
 
-[node name="kosz" type="RigidBody3D"]
+[node name="kosz" type="RigidBody3D" groups=["mesh"]]
 collision_layer = 130
 collision_mask = 130
 mass = 60.0

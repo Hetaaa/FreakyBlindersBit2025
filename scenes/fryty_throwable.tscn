@@ -23,7 +23,7 @@ collision_mask = 64
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PickUpArea"]
 shape = SubResource("BoxShape3D_4n8ct")
 
-[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_x64a7")]
+[node name="Sketchfab_Scene" parent="." groups=["mesh"] instance=ExtResource("2_x64a7")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.021879196, 0, 0.020854473)
 
 [node name="Highlitable" parent="Sketchfab_Scene/Sketchfab_model/e6398e8419b149399a727b00d0f0f973_obj_cleaner_materialmerger_gles" index="1" instance=ExtResource("3_xjjbq")]

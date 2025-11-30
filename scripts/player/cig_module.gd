@@ -11,7 +11,6 @@ func Enter():
 	player.cig_mesh.hide()
 	shoot()
 	await get_tree().create_timer(0.2,false).timeout
-	Global.toggle_freeze()
 	await get_tree().create_timer(0.3,false).timeout
 	player.changeModule(player.pickup_module)
 func shoot():
@@ -35,7 +34,6 @@ func shoot():
 			randf_range(-10.0, 10.0)
 		)
 	projectile.apply_impulse(direction * shoot_force)
-	player.cig_sp = projectile
 func Exit():
 	player.mouse_block =false
 	player.movement_block = false

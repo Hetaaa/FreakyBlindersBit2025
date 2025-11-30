@@ -23,6 +23,8 @@ var dead : bool = false
 
 var weapon = 0 #0 - pistol/ 1 - shotgun
 var spot_meter : int = 0
+
+@onready var model : MeshInstance3D = $Enemy_model/rig_001/Skeleton3D/male_player
 func _physics_process(delta: float) -> void:
 	if Global.time_freeze == true:
 		is_frozen = true

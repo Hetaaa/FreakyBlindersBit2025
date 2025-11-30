@@ -115,8 +115,16 @@ var dead : bool = true
 @onready var item_holder = $FpcLayer/SubViewportContainer/SubViewport/Camera3D/Fpc/handsDone/ArmRig/Skeleton3D/BoneAttachment3D/ItemHolder
 @onready var cig_mesh = $FpcLayer/SubViewportContainer/SubViewport/Camera3D/Fpc/handsDone/ArmRig/Skeleton3D/BoneAttachment3D2/Szlug/pet
 
-var cig_sp
+@onready var fpc_camera =$FpcLayer/SubViewportContainer/SubViewport/Camera3D
 
+
+@onready var bottle_hand =$FpcLayer/SubViewportContainer/SubViewport/Camera3D/Fpc/handsDone/ArmRig/Skeleton3D/BoneAttachment3D/ItemHolder/bottle
+@onready var frytki_hand =$FpcLayer/SubViewportContainer/SubViewport/Camera3D/Fpc/handsDone/ArmRig/Skeleton3D/BoneAttachment3D/ItemHolder/fryty
+@onready var burger_hand = $FpcLayer/SubViewportContainer/SubViewport/Camera3D/Fpc/handsDone/ArmRig/Skeleton3D/BoneAttachment3D/ItemHolder/burger
+@onready var kosz_hand = $FpcLayer/SubViewportContainer/SubViewport/Camera3D/Fpc/handsDone/BigItemHolder/kosz
+@onready var gasnica_hand = $FpcLayer/SubViewportContainer/SubViewport/Camera3D/Fpc/handsDone/BigItemHolder/gasnica
+
+@onready var hand_icon = $HudLayer/HandIcon
 func _ready() -> void:
 	Global.player = self
 	changeModule(modules.initial_module)
@@ -141,8 +149,6 @@ func _input(event: InputEvent) -> void:
 
 #Uruchamia się 60 razy na sekundę
 func _physics_process(delta: float) -> void:
-	if cig_sp:
-		print(cig_sp.global_position)
 	#Aktualizacja stanu gracza
 	updatePlayerState()
 	#Aktualizacja kiwania kamerą
@@ -165,6 +171,9 @@ func _physics_process(delta: float) -> void:
 	updateModules(delta)
 	move_and_slide()
 
+func _process(delta: float) -> void:
+	fpc_camera.global_position = camera.global_position
+	fpc_camera.global_rotation = camera.global_rotation
 
 #Funkcja kiwania głową
 func headbob() -> void:
@@ -343,8 +352,32 @@ func changeModule(module : Module):
 
 func pickup(item):
 	pocket_item = item
-	
 	changeModule(throwing_module)
+func show_my_throwable():
+	var nam := str(pocket_item.name).to_lower()
+	if nam.contains("butelka"):
+		bottle_hand.show()
+		change_animation("takeout")
+
+	elif nam.contains("frytki"):
+		frytki_hand.show()
+		change_animation("takeout")
+
+	elif nam.contains("gasnica"):
+		gasnica_hand.show()
+
+	elif nam.contains("kosz"):
+		kosz_hand.show()
+
+	elif nam.contains("burger"):
+		burger_hand.show()
+		change_animation("takeout")
+func hide_all_throwables():
+	bottle_hand.hide()
+	burger_hand.hide()
+	kosz_hand.hide()
+	gasnica_hand.hide()
+	frytki_hand.hide()
 
 func get_hit(amount):
 	health -= amount
