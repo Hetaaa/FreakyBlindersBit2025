@@ -503,7 +503,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4822774, 3.074234, 6.95973
 [node name="Freezetimer" parent="." instance=ExtResource("10_useik")]
 
 [node name="Unfreeze" parent="Freezetimer" index="1"]
-wait_time = 20.0
+wait_time = 30.0
 
 [node name="Ambience" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20.45937)

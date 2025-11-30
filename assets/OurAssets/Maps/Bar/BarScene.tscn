@@ -393,6 +393,8 @@ volume_db = -27.407
 unit_size = 56.25
 max_db = -7.972
 autoplay = true
+[node name="Unfreeze" parent="Freezetimer" index="1"]
+wait_time = 25.0
 
 [connection signal="player_dead" from="Player" to="." method="_on_player_player_dead"]
 
