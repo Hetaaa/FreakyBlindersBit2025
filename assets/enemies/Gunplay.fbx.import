@@ -3,13 +3,12 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b35445fm5oa6b"
-path="res://.godot/imported/Gunplay.fbx-dc06e789bd9008c368187f4af41a89a8.scn"
+uid="uid://drqw5ecd1bkgd"
+valid=false
 
 [deps]
 
 source_file="res://assets/enemies/Gunplay.fbx"
-dest_files=["res://.godot/imported/Gunplay.fbx-dc06e789bd9008c368187f4af41a89a8.scn"]
 
 [params]
 
@@ -38,7 +37,7 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={}
-fbx/importer=0
+fbx/importer=1
 fbx/allow_geometry_helper_nodes=false
 fbx/embedded_image_handling=1
-fbx/naming_version=2
+fbx/naming_version=1

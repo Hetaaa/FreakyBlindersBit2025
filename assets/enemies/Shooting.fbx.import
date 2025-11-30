@@ -3,13 +3,12 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bvqbv6rlajr5s"
-path="res://.godot/imported/Shooting.fbx-e37d7cb9841f95d47c22e9000845590a.scn"
+uid="uid://dhq0qov4lrkfb"
+valid=false
 
 [deps]
 
 source_file="res://assets/enemies/Shooting.fbx"
-dest_files=["res://.godot/imported/Shooting.fbx-e37d7cb9841f95d47c22e9000845590a.scn"]
 
 [params]
 
@@ -38,7 +37,7 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={}
-fbx/importer=0
+fbx/importer=1
 fbx/allow_geometry_helper_nodes=false
 fbx/embedded_image_handling=1
-fbx/naming_version=2
+fbx/naming_version=1

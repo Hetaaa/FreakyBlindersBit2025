@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://dhr7kwfkmlq7o"]
+[gd_scene load_steps=20 format=3 uid="uid://dhr7kwfkmlq7o"]
 
 [ext_resource type="PackedScene" uid="uid://c6k5nnpbypshi" path="res://addons/maaacks_game_template/base/nodes/menus/main_menu/main_menu.tscn" id="1_sr523"]
 [ext_resource type="Script" uid="uid://6kkgt00vvrar" path="res://scenes/menus/main_menu/main_menu_with_animations.gd" id="2_ixa71"]
 [ext_resource type="PackedScene" uid="uid://mhk7ai1jtttm" path="res://scenes/windows/main_menu_options_window.tscn" id="3_2k5l7"]
 [ext_resource type="PackedScene" uid="uid://dnaejbfe1nvn1" path="res://scenes/windows/main_menu_credits_window.tscn" id="4_vsp5b"]
 [ext_resource type="PackedScene" uid="uid://cwt4p3bufkke5" path="res://addons/maaacks_game_template/base/nodes/windows/confirmation_overlaid_window.tscn" id="5_6xh1d"]
+[ext_resource type="Texture2D" uid="uid://cm7l8xx04mqap" path="res://assets/misc images/mainmenu.png" id="5_ixa71"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "Intro"
@@ -318,6 +319,7 @@ graph_offset = Vector2(-180.277, 49)
 script = ExtResource("2_ixa71")
 level_select_packed_scene = null
 confirm_new_game = true
+game_scene_path = "uid://clxs5gwisal5m"
 options_packed_scene = ExtResource("3_2k5l7")
 credits_packed_scene = ExtResource("4_vsp5b")
 
@@ -330,6 +332,9 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_vikuh")
 anim_player = NodePath("../MenuAnimationPlayer")
 parameters/conditions/intro_done = false
+
+[node name="BackgroundTextureRect" parent="." index="4"]
+texture = ExtResource("5_ixa71")
 
 [node name="VersionContainer" parent="VersionMargin" index="0"]
 modulate = Color(1, 1, 1, 0)
@@ -346,6 +351,9 @@ modulate = Color(1, 1, 1, 0)
 [node name="MenuButtonsBoxContainer" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer" index="0"]
 lock = true
 
+[node name="NewGameButton" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="0"]
+text = "Graj"
+
 [node name="ContinueGameButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="1"]
 unique_name_in_owner = true
 visible = false
@@ -357,6 +365,15 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 text = "Level Select"
+
+[node name="OptionsButton" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="3"]
+text = "Ustawienia"
+
+[node name="CreditsButton" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="4"]
+text = "Autorzy"
+
+[node name="ExitButton" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="5"]
+text = "Wyjdź"
 
 [node name="NewGameConfirmation" parent="." index="7" instance=ExtResource("5_6xh1d")]
 unique_name_in_owner = true

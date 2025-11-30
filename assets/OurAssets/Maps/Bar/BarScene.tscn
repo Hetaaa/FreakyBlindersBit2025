@@ -75,6 +75,7 @@ size = Vector3(3.01465, 4.36816, 2.16211)
 
 [node name="BarScene" type="Node3D"]
 script = ExtResource("1_ewqoi")
+required_kills = 4
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ewqoi")
@@ -374,3 +375,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4609404, 0, -19.242893)
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7.741731, 0.020810783, -23.757067)
 
 [node name="Freezetimer" parent="." instance=ExtResource("8_g782n")]
+
+[editable path="Freezetimer"]
