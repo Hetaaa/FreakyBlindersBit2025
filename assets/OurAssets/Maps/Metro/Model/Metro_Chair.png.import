@@ -2,15 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dr566hacnvqjs"
+uid="uid://rrxp8ugbwwwr"
 path.s3tc="res://.godot/imported/Metro_Chair.png-0c423427e6f4291a31181d074df51cd8.s3tc.ctex"
 path.etc2="res://.godot/imported/Metro_Chair.png-0c423427e6f4291a31181d074df51cd8.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "c3425e6a9c616e22b12bc4f1dde9c21f"
 }
 
 [deps]

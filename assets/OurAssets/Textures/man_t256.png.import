@@ -3,11 +3,17 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cr2c13iiyciv"
-valid=false
+path.s3tc="res://.godot/imported/man_t256.png-e99c1e76a7570f546266059f0c96d8e0.s3tc.ctex"
+path.etc2="res://.godot/imported/man_t256.png-e99c1e76a7570f546266059f0c96d8e0.etc2.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
 
 [deps]
 
 source_file="res://assets/OurAssets/Textures/man_t256.png"
+dest_files=["res://.godot/imported/man_t256.png-e99c1e76a7570f546266059f0c96d8e0.s3tc.ctex", "res://.godot/imported/man_t256.png-e99c1e76a7570f546266059f0c96d8e0.etc2.ctex"]
 
 [params]
 

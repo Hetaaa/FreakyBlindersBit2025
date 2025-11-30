@@ -1,6 +1,7 @@
 extends Node
 
 signal highlight_changed(is_active : bool)
+var kills : int = 0
 
 var player : Player
 
