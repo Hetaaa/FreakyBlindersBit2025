@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0ciiw7x34gfd"]
+
+[ext_resource type="PackedScene" uid="uid://cw1r1ynyahxh8" path="res://assets/OurAssets/Propy/sierp/PSXSickle.glb" id="1_dif4i"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="PSXSickle" parent="." instance=ExtResource("1_dif4i")]
+transform = Transform3D(0.157195, 0, 0, 0, 0.132206, 0, 0, 0, 0.17053, 0, 0, 0)

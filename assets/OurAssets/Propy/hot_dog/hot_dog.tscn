@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c76ynjc6bhamm"]
+
+[ext_resource type="PackedScene" uid="uid://dcti7xnkrjftn" path="res://assets/OurAssets/Propy/hot_dog/hot_dog.glb" id="1_juo5l"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_juo5l")]
