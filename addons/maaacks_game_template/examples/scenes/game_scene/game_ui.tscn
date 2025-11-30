@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bde0cbmryrv5s"]
+[gd_scene load_steps=14 format=3 uid="uid://bde0cbmryrv5s"]
 
 [ext_resource type="PackedScene" uid="uid://ch7wxnbttg3ik" path="res://addons/maaacks_game_template/examples/scenes/windows/pause_menu_layer.tscn" id="2_sgprk"]
 [ext_resource type="Script" uid="uid://bbymrin0cm704" path="res://addons/maaacks_game_template/extras/scripts/level_loader.gd" id="5_a40ke"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://tooek7mdq54x" path="res://addons/maaacks_game_template/examples/scenes/game_scene/configurable_sub_viewport.gd" id="9_u1dsg"]
 [ext_resource type="Script" uid="uid://cmqngqwso0uve" path="res://addons/maaacks_game_template/examples/scripts/level_and_state_manager.gd" id="11_a40ke"]
 [ext_resource type="Script" uid="uid://ca84daa8dggkl" path="res://addons/maaacks_game_template/examples/scenes/game_scene/game_timer.gd" id="12_sgprk"]
+[ext_resource type="Script" uid="uid://cvdo0w12m2b3n" path="res://addons/maaacks_game_template/examples/scenes/game_scene/rich_text_label.gd" id="13_up6yb"]
 
 [node name="GameUI" type="Control"]
 layout_mode = 3
@@ -69,3 +70,9 @@ script = ExtResource("9_u1dsg")
 
 [node name="GameTimer" type="Node" parent="."]
 script = ExtResource("12_sgprk")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." groups=["time_display"]]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("13_up6yb")

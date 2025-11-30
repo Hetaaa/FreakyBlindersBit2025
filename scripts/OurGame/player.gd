@@ -1,6 +1,8 @@
 extends CharacterBody3D
 class_name Player
 
+signal player_dead
+
 #Czulosc rozgladania sie 
 @export var SENSITIVITY : float = 0.003
 #zmienna dla rzucanego elementu
@@ -344,4 +346,5 @@ func get_hit(amount):
 func die():
 	movement_block = true
 	mouse_block = true
+	player_dead.emit()
 	dead_layer.show()

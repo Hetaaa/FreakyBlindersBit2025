@@ -10,6 +10,15 @@ texture = ExtResource("3_6m2xx")
 
 [node name="LevelLostWindow" instance=ExtResource("1_jt3uh")]
 custom_minimum_size = Vector2(432, 240)
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
 script = ExtResource("2_6m2xx")
 update_content = true
 text = "You lost..."
@@ -24,7 +33,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_o54tf")
 visible = false
 
 [node name="DescriptionLabel" parent="ContentContainer/BoxContainer/DescriptionMargin" index="0"]
-text = "You lost..."
+text = "[center][font_size=64][color=8b0000]The break is over ...[/color][/font_size][/center]"
 
 [node name="MenuButtons" parent="ContentContainer/BoxContainer/MenuButtonsMargin" index="0"]
 vertical = false

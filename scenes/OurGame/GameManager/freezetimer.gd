@@ -13,7 +13,9 @@ func _process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	Global.toggle_freeze()
+	get_tree().call_group("time_display", "show")
 
 
 func _on_unfreeze_timeout() -> void:
 	Global.toggle_freeze()
+	get_tree().call_group("time_display", "hide")
