@@ -25,7 +25,7 @@ collision_mask = 64
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0.7353146, 0)
 shape = SubResource("BoxShape3D_hjvlh")
 
-[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_hjvlh")]
+[node name="Sketchfab_Scene" parent="." groups=["mesh"] instance=ExtResource("2_hjvlh")]
 
 [node name="Highlitable" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/_6/root_5/tank_0/Object_6" index="0" instance=ExtResource("3_evrpt")]
 

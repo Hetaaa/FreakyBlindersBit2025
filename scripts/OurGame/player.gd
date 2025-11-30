@@ -114,7 +114,21 @@ var pocket_item
 var dead : bool = true
 
 @onready var dead_layer = $PPLayer/DeadLayer
+@onready var anim_tree = $FpcLayer/SubViewportContainer/SubViewport/Camera3D/Fpc/AnimationTree
 
+@onready var item_holder = $FpcLayer/SubViewportContainer/SubViewport/Camera3D/Fpc/handsDone/ArmRig/Skeleton3D/BoneAttachment3D/ItemHolder
+@onready var cig_mesh = $FpcLayer/SubViewportContainer/SubViewport/Camera3D/Fpc/handsDone/ArmRig/Skeleton3D/BoneAttachment3D2/Szlug/pet
+
+@onready var fpc_camera =$FpcLayer/SubViewportContainer/SubViewport/Camera3D
+
+
+@onready var bottle_hand =$FpcLayer/SubViewportContainer/SubViewport/Camera3D/Fpc/handsDone/ArmRig/Skeleton3D/BoneAttachment3D/ItemHolder/bottle
+@onready var frytki_hand =$FpcLayer/SubViewportContainer/SubViewport/Camera3D/Fpc/handsDone/ArmRig/Skeleton3D/BoneAttachment3D/ItemHolder/fryty
+@onready var burger_hand = $FpcLayer/SubViewportContainer/SubViewport/Camera3D/Fpc/handsDone/ArmRig/Skeleton3D/BoneAttachment3D/ItemHolder/burger
+@onready var kosz_hand = $FpcLayer/SubViewportContainer/SubViewport/Camera3D/Fpc/handsDone/BigItemHolder/kosz
+@onready var gasnica_hand = $FpcLayer/SubViewportContainer/SubViewport/Camera3D/Fpc/handsDone/BigItemHolder/gasnica
+
+@onready var hand_icon = $HudLayer/HandIcon
 @onready var stoptime: AnimationPlayer = $Head/Eyes/Camera3D/stoptime
 
 func _ready() -> void:
@@ -142,7 +156,6 @@ func _input(event: InputEvent) -> void:
 
 #Uruchamia się 60 razy na sekundę
 func _physics_process(delta: float) -> void:
-	
 	#Aktualizacja stanu gracza
 	updatePlayerState()
 	#Aktualizacja kiwania kamerą
@@ -164,6 +177,10 @@ func _physics_process(delta: float) -> void:
 	#Potrzebna funkcja by gracz mógł przetwarzać ruch
 	updateModules(delta)
 	move_and_slide()
+
+func _process(delta: float) -> void:
+	fpc_camera.global_position = camera.global_position
+	fpc_camera.global_rotation = camera.global_rotation
 	
 func on_ani_change(is_active: bool):
 	if is_active:
@@ -248,6 +265,7 @@ func movement(delta):
 		eyes.position.x = lerp(eyes.position.x, 0.0, delta*10.0)
 
 func updatePlayerState() -> void:
+	
 	moving = (input_dir != Vector2.ZERO)
 	if not is_on_floor():
 		player_state = PlayerState.AIR
@@ -265,9 +283,10 @@ func updatePlayerState() -> void:
 				player_state = PlayerState.SPRINTING
 			else:
 				player_state = PlayerState.WALKING
-				
+	
 	updatePlayerSpeed(player_state)
-	updatePlayerColShape(player_state)
+	if !movement_block:
+		updatePlayerColShape(player_state)
 	
 
 func updatePlayerColShape(_player_state : PlayerState) -> void:
@@ -349,6 +368,31 @@ func changeModule(module : Module):
 func pickup(item):
 	pocket_item = item
 	changeModule(throwing_module)
+func show_my_throwable():
+	var nam := str(pocket_item.name).to_lower()
+	if nam.contains("butelka"):
+		bottle_hand.show()
+		change_animation("takeout")
+
+	elif nam.contains("frytki"):
+		frytki_hand.show()
+		change_animation("takeout")
+
+	elif nam.contains("gasnica"):
+		gasnica_hand.show()
+
+	elif nam.contains("kosz"):
+		kosz_hand.show()
+
+	elif nam.contains("burger"):
+		burger_hand.show()
+		change_animation("takeout")
+func hide_all_throwables():
+	bottle_hand.hide()
+	burger_hand.hide()
+	kosz_hand.hide()
+	gasnica_hand.hide()
+	frytki_hand.hide()
 
 func get_hit(amount):
 	health -= amount
@@ -360,4 +404,9 @@ func die():
 	mouse_block = true
 	player_dead.emit()
 	dead_layer.show()
+
+func change_animation(anim):
+	if anim_tree:
+		anim_tree.set("parameters/Transition/transition_request", anim)
+		anim_tree.set("parameters/TimeSeek/seek_request", 0.0)
 	

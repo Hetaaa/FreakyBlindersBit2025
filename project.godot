@@ -37,6 +37,7 @@ enabled=PackedStringArray("res://addons/maaacks_game_template/plugin.cfg")
 player=""
 level_manager=""
 enemies=""
+mesh=""
 time_display=""
 
 [gui]

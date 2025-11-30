@@ -65,7 +65,7 @@ collision_mask = 64
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PickUpArea"]
 shape = SubResource("BoxShape3D_hk52l")
 
-[node name="bottle_031" type="Node3D" parent="."]
+[node name="bottle_031" type="Node3D" parent="." groups=["mesh"]]
 transform = Transform3D(7.54979e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, -7.54979e-08, -3.300118e-15, 0.578, 0, 1.1792536)
 
 [node name="bottle_031_bar_atlas_0" type="MeshInstance3D" parent="bottle_031"]
